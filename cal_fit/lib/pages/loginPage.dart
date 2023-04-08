@@ -24,7 +24,7 @@ class _SignInPageState extends State<SignInPage> {
       body: Form(
         key: _formKey,
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +66,7 @@ class _SignInPageState extends State<SignInPage> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xff396A78),
-                    minimumSize: Size(100, 50)),
+                    minimumSize: Size(50, 50)),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
