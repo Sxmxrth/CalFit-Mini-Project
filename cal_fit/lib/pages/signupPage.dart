@@ -16,10 +16,10 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffB8E6F3),
+      backgroundColor: Color(0xffE1F2F7),
       appBar: AppBar(
         title: Center(child: Text('Signup')),
-        backgroundColor: Color(0xff396A78),
+        backgroundColor: Color(0xff5DC0DE),
       ),
       body: Form(
         key: _formKey,
@@ -85,7 +85,7 @@ class _SignupPageState extends State<SignupPage> {
               SizedBox(height: 30.0),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xff396A78),
+                    backgroundColor: Color(0xff5DC0DE),
                     minimumSize: Size(200, 50)),
                 child: Text('Sign Up'),
                 onPressed: () {

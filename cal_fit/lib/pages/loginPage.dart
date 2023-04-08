@@ -16,10 +16,10 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffB8E6F3),
+      backgroundColor: Color(0xffE1F2F7),
       appBar: AppBar(
         title: Center(child: Text('Sign In')),
-        backgroundColor: Color(0xff396A78),
+        backgroundColor: Color(0xff5DC0DE),
       ),
       body: Form(
         key: _formKey,
@@ -65,7 +65,7 @@ class _SignInPageState extends State<SignInPage> {
               SizedBox(height: 16.0),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xff396A78),
+                    backgroundColor: Color(0xff5DC0DE),
                     minimumSize: Size(50, 50)),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
