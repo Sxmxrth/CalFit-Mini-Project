@@ -19,11 +19,11 @@ class _bottomNavbarState extends State<bottomNavbar> {
       style: optionStyle,
     ),
     Text(
-      'Index 1: Steps',
+      'Index 1: Fitness Center',
       style: optionStyle,
     ),
     Text(
-      'Index 2: Fitness Center',
+      'Index 2: Calorie',
       style: optionStyle,
     ),
     Text(
@@ -51,18 +51,21 @@ class _bottomNavbarState extends State<bottomNavbar> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Color(0xff0B2447),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.pin_drop),
-            label: 'Steps',
+            icon: Icon(Icons.dashboard),
+            label: 'Dashboard',
             backgroundColor: Color(0xff0B2447),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fitness_center),
             label: 'Fitness',
+            backgroundColor: Color(0xff0B2447),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.add,
+              size: 40,
+            ),
+            label: 'Calories',
             backgroundColor: Color(0xff0B2447),
           ),
           BottomNavigationBarItem(
