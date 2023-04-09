@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff5DC0DE),
+      backgroundColor: Color(0xff0B2447),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -57,6 +57,7 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: 15),
               child: Image.asset(
                 "images/fitnessModel.png",
+                height: 290,
               ),
             )
           ],

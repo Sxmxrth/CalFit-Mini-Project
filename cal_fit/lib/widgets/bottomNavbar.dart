@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
@@ -53,31 +53,31 @@ class _bottomNavbarState extends State<bottomNavbar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Color(0xff5DC0DE),
+            backgroundColor: Color(0xff0B2447),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.pin_drop),
             label: 'Steps',
-            backgroundColor: Color(0xff5DC0DE),
+            backgroundColor: Color(0xff0B2447),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fitness_center),
             label: 'Fitness',
-            backgroundColor: Color(0xff5DC0DE),
+            backgroundColor: Color(0xff0B2447),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.food_bank),
             label: 'Diet',
-            backgroundColor: Color(0xff5DC0DE),
+            backgroundColor: Color(0xff0B2447),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
-            backgroundColor: Color(0xff5DC0DE),
+            backgroundColor: Color(0xff0B2447),
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xff1B3037),
+        selectedItemColor: Color(0xffA5D7E8),
         onTap: _onItemTapped,
       ),
     );
