@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, unused_field, library_private_types_in_public_api, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:cal_fit/screens/completeUserProfile.dart';
 import 'package:cal_fit/screens/loginPage.dart';
 import 'package:flutter/material.dart';
 
