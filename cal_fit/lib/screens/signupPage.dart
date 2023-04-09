@@ -1,11 +1,16 @@
-// ignore_for_file: prefer_const_constructors, unused_field, library_private_types_in_public_api, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, unused_field, library_private_types_in_public_api, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:cal_fit/screens/loginPage.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
   @override
   _SignupPageState createState() => _SignupPageState();
 }
+
+final Map<String, WidgetBuilder> profileRoutes = {
+  '/signin': (BuildContext context) => SignInPage(),
+};
 
 class _SignupPageState extends State<SignupPage> {
   final _formKey = GlobalKey<FormState>();
@@ -18,14 +23,16 @@ class _SignupPageState extends State<SignupPage> {
     return Scaffold(
       backgroundColor: Color(0xffE1F2F7),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Center(
-            child: Text(
-          'Signup',
-          style: TextStyle(
-            fontFamily: "SourceSansPro",
-            fontSize: 25,
+          child: Text(
+            'Signup',
+            style: TextStyle(
+              fontFamily: "SourceSansPro",
+              fontSize: 25,
+            ),
           ),
-        )),
+        ),
         backgroundColor: Color(0xff0B2447),
       ),
       body: Form(
@@ -120,7 +127,9 @@ class _SignupPageState extends State<SignupPage> {
                   Container(
                     child: Center(
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, "/signin");
+                        },
                         child: Text(
                           "Already have an account? Sign in",
                           style: TextStyle(

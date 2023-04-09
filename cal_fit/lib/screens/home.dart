@@ -1,6 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cal_fit/screens/loginPage.dart';
+import 'package:cal_fit/screens/signupPage.dart';
 import 'package:flutter/material.dart';
+
+final Map<String, WidgetBuilder> profileRoutes = {
+  '/signup': (BuildContext context) => SignupPage(),
+};
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -47,11 +53,16 @@ class HomePage extends StatelessWidget {
                 ),
                 minimumSize: Size(300, 65),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/signup');
+              },
               child: Text(
                 "Next",
                 style: TextStyle(color: Colors.black, fontSize: 20),
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Container(
               margin: EdgeInsets.symmetric(vertical: 15),

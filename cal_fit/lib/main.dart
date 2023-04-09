@@ -10,6 +10,13 @@ void main() {
   runApp(const MyApp());
 }
 
+final Map<String, WidgetBuilder> routes = {
+  '/home': (BuildContext context) => HomePage(),
+  '/signup': (BuildContext context) => SignupPage(),
+  '/signin': (BuildContext context) => SignInPage(),
+  '/dashboard': (BuildContext context) => bottomNavbar(),
+};
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -19,7 +26,8 @@ class MyApp extends StatelessWidget {
         SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: bottomNavbar(),
+      routes: routes,
+      initialRoute: "/home",
     );
   }
 }

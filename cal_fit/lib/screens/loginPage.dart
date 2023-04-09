@@ -1,11 +1,16 @@
 // ignore_for_file: prefer_const_constructors, unused_field, library_private_types_in_public_api, use_key_in_widget_constructors
 
+import 'package:cal_fit/widgets/bottomNavbar.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {
   @override
   _SignInPageState createState() => _SignInPageState();
 }
+
+final Map<String, WidgetBuilder> profileRoutes = {
+  '/dashboard': (BuildContext context) => bottomNavbar(),
+};
 
 class _SignInPageState extends State<SignInPage> {
   final _formKey = GlobalKey<FormState>();
@@ -18,6 +23,7 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
       backgroundColor: Color(0xffE1F2F7),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Center(
             child: Text(
           'Sign In',
@@ -104,6 +110,7 @@ class _SignInPageState extends State<SignInPage> {
                         _formKey.currentState!.save();
                         // implement sign-in logic
                       }
+                      Navigator.pushNamed(context, '/dashboard');
                     },
                     child: Text('Sign In'),
                   ),
