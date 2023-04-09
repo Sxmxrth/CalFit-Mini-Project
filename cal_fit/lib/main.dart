@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'screens/signupPage.dart';
 import 'screens/loginPage.dart';
 import 'screens/home.dart';
+import 'screens/profilePage.dart';
 import 'widgets/bottomNavbar.dart';
 
 void main() {

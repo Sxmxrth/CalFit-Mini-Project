@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:cal_fit/screens/profilePage.dart';
 
 class bottomNavbar extends StatefulWidget {
   const bottomNavbar({super.key});
@@ -30,10 +31,7 @@ class _bottomNavbarState extends State<bottomNavbar> {
       'Index 3: Diet Options',
       style: optionStyle,
     ),
-    Text(
-      'Index 4: Profile Page',
-      style: optionStyle,
-    ),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -78,6 +76,8 @@ class _bottomNavbarState extends State<bottomNavbar> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Color(0xffA5D7E8),
+        unselectedIconTheme: IconThemeData(size: 30),
+        selectedIconTheme: IconThemeData(size:35),
         onTap: _onItemTapped,
       ),
     );
