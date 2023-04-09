@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
+import 'package:cal_fit/widgets/chatBot.dart';
 import 'package:flutter/material.dart';
 import 'package:cal_fit/screens/profilePage.dart';
 
@@ -12,6 +13,7 @@ class bottomNavbar extends StatefulWidget {
 
 class _bottomNavbarState extends State<bottomNavbar> {
   int _selectedIndex = 0;
+
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -23,10 +25,11 @@ class _bottomNavbarState extends State<bottomNavbar> {
       'Index 1: Fitness Center',
       style: optionStyle,
     ),
-    Text(
-      'Index 2: Calorie',
-      style: optionStyle,
-    ),
+    // Text(
+    //   'Index 2: Calorie',
+    //   style: optionStyle,
+    // ),
+    chatBot(),
     Text(
       'Index 3: Diet Options',
       style: optionStyle,
@@ -80,7 +83,7 @@ class _bottomNavbarState extends State<bottomNavbar> {
         currentIndex: _selectedIndex,
         selectedItemColor: Color(0xffA5D7E8),
         unselectedIconTheme: IconThemeData(size: 30),
-        selectedIconTheme: IconThemeData(size:35),
+        selectedIconTheme: IconThemeData(size: 35),
         onTap: _onItemTapped,
       ),
     );
