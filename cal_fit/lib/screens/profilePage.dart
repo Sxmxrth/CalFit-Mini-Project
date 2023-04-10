@@ -388,7 +388,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             onPressed: () {
                               //Update the database with this info
                             },
-                            child: Text("Submit"),
+                            child: Text("Update"),
                             style: ElevatedButton.styleFrom(
                                 minimumSize: Size(100, 40),
                                 backgroundColor: Color(0xff0B2447)),
