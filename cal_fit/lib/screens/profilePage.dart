@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
 
 import 'package:cal_fit/screens/signupPage.dart';
-import 'package:cal_fit/widgets/chatBot.dart';
 import 'package:flutter/material.dart';
 
 final Map<String, WidgetBuilder> profileRoutes = {
@@ -120,20 +119,6 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 190,
-          ),
-          Container(
-            padding: EdgeInsets.only(
-              right: 20,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                chatBot(),
-              ],
-            ),
-          )
         ],
       ),
     );

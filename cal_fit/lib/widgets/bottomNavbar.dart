@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
-import 'package:cal_fit/widgets/chatBot.dart';
 import 'package:flutter/material.dart';
 import 'package:cal_fit/screens/profilePage.dart';
 
@@ -25,11 +24,10 @@ class _bottomNavbarState extends State<bottomNavbar> {
       'Index 1: Fitness Center',
       style: optionStyle,
     ),
-    // Text(
-    //   'Index 2: Calorie',
-    //   style: optionStyle,
-    // ),
-    chatBot(),
+    Text(
+      'Index 2: Calorie',
+      style: optionStyle,
+    ),
     Text(
       'Index 3: Diet Options',
       style: optionStyle,
@@ -48,6 +46,13 @@ class _bottomNavbarState extends State<bottomNavbar> {
     return Scaffold(
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        backgroundColor: Color(0xff19376D),
+        child: const Icon(Icons.chat_bubble),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
