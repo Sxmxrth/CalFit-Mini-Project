@@ -303,6 +303,21 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                           SizedBox(
+                            height: 20,
+                          ),
+                          TextFormField(
+                            decoration: InputDecoration(
+                                labelText: "Target Weight",
+                                prefixIcon: Icon(Icons.pin_end),
+                                border: OutlineInputBorder()),
+                            validator: (value) {
+                              value!.isEmpty
+                                  ? "please enter your Target Weight"
+                                  : "null";
+                            },
+                            onSaved: (value) {},
+                          ),
+                          SizedBox(
                             height: 10,
                           ),
                           Row(
@@ -368,6 +383,15 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           SizedBox(
                             height: 10,
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              //Update the database with this info
+                            },
+                            child: Text("Submit"),
+                            style: ElevatedButton.styleFrom(
+                                minimumSize: Size(100, 40),
+                                backgroundColor: Color(0xff0B2447)),
                           )
                         ],
                       ),
