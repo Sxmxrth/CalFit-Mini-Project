@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
                   fontSize: 60,
                   fontWeight: FontWeight.bold,
                   fontFamily: "SourceSansPro",
-                  color: Colors.white,
+                  color: Color(0xffA5D7E8),
                 ),
               ),
             ),
