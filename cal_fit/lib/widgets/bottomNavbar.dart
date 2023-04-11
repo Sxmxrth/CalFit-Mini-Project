@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:cal_fit/screens/profilePage.dart';
+import 'package:cal_fit/screens/dashboard.dart';
 
 class bottomNavbar extends StatefulWidget {
   const bottomNavbar({super.key});
@@ -16,10 +17,7 @@ class _bottomNavbarState extends State<bottomNavbar> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    dashboard(),
     Text(
       'Index 1: Fitness Center',
       style: optionStyle,

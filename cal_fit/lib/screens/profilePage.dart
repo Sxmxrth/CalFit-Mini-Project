@@ -10,6 +10,18 @@ final Map<String, WidgetBuilder> profileRoutes = {
 List<String> options = ["Male", "Female"];
 var selectedOptions = options[0];
 
+spaceBelow() {
+  return SizedBox(
+    height: 10,
+  );
+}
+
+spaceBetween() {
+  return SizedBox(
+    width: 20,
+  );
+}
+
 List<String> medicalCondition = [
   "None",
   "Diabetes",
@@ -124,9 +136,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     fontWeight: FontWeight.bold,
                     fontFamily: 'SourceSansPro'),
               ),
-              SizedBox(
-                height: 10,
-              ),
+              spaceBelow(),
               Form(
                 child: Column(
                   children: [
@@ -146,9 +156,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             },
                             onSaved: (value) {},
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          spaceBelow(),
                           Row(
                             children: <Widget>[
                               Expanded(
@@ -170,9 +178,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                width: 20,
-                              ),
+                              spaceBetween(),
                               Expanded(
                                 child: ElevatedButton(
                                   onPressed: () {
@@ -195,9 +201,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ],
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          spaceBelow(),
                           TextFormField(
                             decoration: InputDecoration(
                                 labelText: "Phone",
@@ -210,9 +214,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             },
                             onSaved: (value) {},
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          spaceBelow(),
                           TextFormField(
                             decoration: InputDecoration(
                                 labelText: "Age",
@@ -223,9 +225,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             },
                             onSaved: (value) {},
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          spaceBelow(),
                           TextFormField(
                             decoration: InputDecoration(
                                 labelText: "Weight",
@@ -238,9 +238,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             },
                             onSaved: (value) {},
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          spaceBelow(),
                           TextFormField(
                             decoration: InputDecoration(
                                 labelText: "Height",
@@ -253,9 +251,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             },
                             onSaved: (value) {},
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
+                          spaceBetween(),
                           Row(
                             children: <Widget>[
                               Expanded(
@@ -277,9 +273,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                width: 20,
-                              ),
+                              spaceBetween(),
                               Expanded(
                                 child: ElevatedButton(
                                   onPressed: () {
@@ -317,9 +311,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             },
                             onSaved: (value) {},
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          spaceBelow(),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -349,9 +341,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ],
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          spaceBelow(),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -381,9 +371,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ],
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          spaceBelow(),
                           ElevatedButton(
                             onPressed: () {
                               //Update the database with this info
