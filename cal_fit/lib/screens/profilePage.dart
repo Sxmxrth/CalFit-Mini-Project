@@ -505,7 +505,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      "cm",
+                                      "kg",
                                       style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.w500,
@@ -517,7 +517,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 Slider(
                                   activeColor: Color(0xff576CBC),
                                   value: targetWeight,
-                                  max: 210,
+                                  max: 120,
                                   label: currentSlider.toString(),
                                   onChanged: (double value) {
                                     setState(() {
