@@ -22,6 +22,8 @@ spaceBetween() {
   );
 }
 
+double currentSlider = 120.0;
+
 List<String> medicalCondition = [
   "None",
   "Diabetes",
@@ -226,18 +228,58 @@ class _ProfilePageState extends State<ProfilePage> {
                             onSaved: (value) {},
                           ),
                           spaceBelow(),
-                          TextFormField(
-                            decoration: InputDecoration(
-                                labelText: "Weight",
-                                prefixIcon: Icon(Icons.monitor_weight),
-                                border: OutlineInputBorder()),
-                            validator: (value) {
-                              value!.isEmpty
-                                  ? "please enter your Weight"
-                                  : "null";
-                            },
-                            onSaved: (value) {},
+                          Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.black),
+                                borderRadius: BorderRadius.circular(10)),
+                            padding: EdgeInsets.all(20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "HEIGHT",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "SourceSansPro"),
+                                ),
+                                spaceBelow(),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.baseline,
+                                  textBaseline: TextBaseline.alphabetic,
+                                  children: [
+                                    Text(
+                                      currentSlider.round().toString(),
+                                      style: TextStyle(
+                                          fontSize: 40,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      "cm",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                spaceBelow(),
+                                Slider(
+                                  value: currentSlider,
+                                  max: 210,
+                                  label: currentSlider.toString(),
+                                  onChanged: (double value) {
+                                    setState(() {
+                                      currentSlider = value;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
                           ),
+                          spaceBelow(),
                           spaceBelow(),
                           TextFormField(
                             decoration: InputDecoration(
@@ -251,7 +293,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             },
                             onSaved: (value) {},
                           ),
-                          spaceBetween(),
+                          spaceBelow(),
                           Row(
                             children: <Widget>[
                               Expanded(
