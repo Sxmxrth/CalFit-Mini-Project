@@ -32,7 +32,7 @@ class CardImageRight extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 30),
               child: Image.asset(
                 image,
-                height: 120,
+                height: 130,
               ),
             ),
           ],
