@@ -9,31 +9,34 @@ class CardImageRight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: 20),
-      decoration: BoxDecoration(
-          border: Border.all(color: Colors.black),
-          borderRadius: BorderRadius.circular(10)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: 150,
-            height: 150,
-            child: Text(
-              content,
-              style: TextStyle(fontSize: 14),
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        padding: EdgeInsets.only(top: 20),
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.circular(10)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: 150,
+              height: 150,
+              child: Text(
+                content,
+                style: TextStyle(fontSize: 14),
+              ),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 30),
-            child: Image.asset(
-              image,
-              height: 120,
+            Container(
+              margin: EdgeInsets.only(bottom: 30),
+              child: Image.asset(
+                image,
+                height: 120,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -45,31 +48,34 @@ class CardImageLeft extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: 20),
-      decoration: BoxDecoration(
-          border: Border.all(color: Colors.black),
-          borderRadius: BorderRadius.circular(10)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            margin: EdgeInsets.only(bottom: 30),
-            child: Image.asset(
-              image,
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        padding: EdgeInsets.only(top: 20),
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.circular(10)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.only(bottom: 30),
+              child: Image.asset(
+                image,
+                height: 150,
+              ),
+            ),
+            Container(
+              width: 150,
               height: 150,
+              child: Text(
+                content,
+                style: TextStyle(fontSize: 14),
+              ),
             ),
-          ),
-          Container(
-            width: 150,
-            height: 150,
-            child: Text(
-              content,
-              style: TextStyle(fontSize: 14),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
