@@ -140,7 +140,6 @@ class _ProfilePageState extends State<ProfilePage> {
                     fontWeight: FontWeight.bold,
                     fontFamily: 'SourceSansPro'),
               ),
-              spaceBelow(),
               Form(
                 child: Column(
                   children: [

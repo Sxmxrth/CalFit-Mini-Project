@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:remove_background/remove_background.dart';
+import 'package:cal_fit/widgets/reusableCard.dart';
 
 class fitnessCenter extends StatefulWidget {
   const fitnessCenter({super.key});
@@ -17,6 +15,7 @@ class _fitnessCenterState extends State<fitnessCenter> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 80,
         elevation: 0,
         automaticallyImplyLeading: false,
         backgroundColor: Color(0xff19376D),
@@ -44,145 +43,30 @@ class _fitnessCenterState extends State<fitnessCenter> {
               SizedBox(
                 height: 15,
               ),
-              Container(
-                padding: EdgeInsets.only(top: 20),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 150,
-                      height: 150,
-                      child: Text(
-                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        style: TextStyle(fontSize: 14),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 30),
-                      child: Image.asset(
-                        "images/cardio.png",
-                        height: 120,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              CardImageRight(
+                  image: "images/cardio.png",
+                  content:
+                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
               SizedBox(height: 20),
-              Container(
-                padding: EdgeInsets.only(top: 20),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(bottom: 30),
-                      child: Image.asset(
-                        "images/core.png",
-                        height: 150,
-                      ),
-                    ),
-                    Container(
-                      width: 150,
-                      height: 150,
-                      child: Text(
-                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        style: TextStyle(fontSize: 14),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              CardImageLeft(
+                  image: "images/core.png",
+                  content:
+                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
               SizedBox(height: 20),
-              Container(
-                padding: EdgeInsets.only(top: 20),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 150,
-                      height: 150,
-                      child: Text(
-                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        style: TextStyle(fontSize: 14),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 30),
-                      child: Image.asset(
-                        "images/chest.png",
-                        height: 150,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              CardImageRight(
+                  image: "images/chest.png",
+                  content:
+                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
               SizedBox(height: 20),
-              Container(
-                padding: EdgeInsets.only(top: 20),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(bottom: 30),
-                      child: Image.asset(
-                        "images/back.png",
-                        height: 150,
-                      ),
-                    ),
-                    Container(
-                      width: 150,
-                      height: 150,
-                      child: Text(
-                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        style: TextStyle(fontSize: 14),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              CardImageLeft(
+                  image: "images/back.png",
+                  content:
+                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
               SizedBox(height: 20),
-              Container(
-                padding: EdgeInsets.only(top: 20),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 150,
-                      height: 150,
-                      child: Text(
-                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        style: TextStyle(fontSize: 14),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 30),
-                      child: Image.asset(
-                        "images/legs.png",
-                        height: 150,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              CardImageRight(
+                  image: "images/legs.png",
+                  content:
+                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
             ],
           ),
         ],
