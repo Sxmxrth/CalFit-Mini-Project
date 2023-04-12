@@ -22,8 +22,6 @@ spaceBetween() {
   );
 }
 
-double currentSlider = 120.0;
-
 List<String> medicalCondition = [
   "None",
   "Diabetes",
@@ -62,6 +60,10 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  double currentSlider = 120.0;
+  double targetWeight = 40;
+  int currentWeight = 40;
+  int currentAge = 14;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -217,17 +219,6 @@ class _ProfilePageState extends State<ProfilePage> {
                             onSaved: (value) {},
                           ),
                           spaceBelow(),
-                          TextFormField(
-                            decoration: InputDecoration(
-                                labelText: "Age",
-                                prefixIcon: Icon(Icons.people),
-                                border: OutlineInputBorder()),
-                            validator: (value) {
-                              value!.isEmpty ? "please enter your age" : "null";
-                            },
-                            onSaved: (value) {},
-                          ),
-                          spaceBelow(),
                           Container(
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.black),
@@ -239,9 +230,10 @@ class _ProfilePageState extends State<ProfilePage> {
                                 Text(
                                   "HEIGHT",
                                   style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500,
-                                      fontFamily: "SourceSansPro"),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: "SourceSansPro",
+                                  ),
                                 ),
                                 spaceBelow(),
                                 Row(
@@ -267,6 +259,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ),
                                 spaceBelow(),
                                 Slider(
+                                  activeColor: Color(0xff576CBC),
                                   value: currentSlider,
                                   max: 210,
                                   label: currentSlider.toString(),
@@ -281,17 +274,160 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           spaceBelow(),
                           spaceBelow(),
-                          TextFormField(
-                            decoration: InputDecoration(
-                                labelText: "Height",
-                                prefixIcon: Icon(Icons.height),
-                                border: OutlineInputBorder()),
-                            validator: (value) {
-                              value!.isEmpty
-                                  ? "please enter your Height"
-                                  : "null";
-                            },
-                            onSaved: (value) {},
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: 20),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(color: Colors.black),
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "WEIGHT",
+                                        style: TextStyle(
+                                            fontFamily: "SourceSansPro",
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      spaceBelow(),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.baseline,
+                                        textBaseline: TextBaseline.alphabetic,
+                                        children: [
+                                          Text(
+                                            currentWeight.toString(),
+                                            style: TextStyle(
+                                                fontSize: 40,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          Text(
+                                            "kg",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500),
+                                          )
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                shape: CircleBorder(),
+                                                backgroundColor:
+                                                    Color(0xff0B2447)),
+                                            onPressed: () {
+                                              setState(() {
+                                                currentWeight--;
+                                              });
+                                            },
+                                            child: Text("-",
+                                                style: TextStyle(fontSize: 20)),
+                                          ),
+                                          spaceBetween(),
+                                          ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                shape: CircleBorder(),
+                                                backgroundColor:
+                                                    Color(0xff0B2447)),
+                                            onPressed: () {
+                                              setState(() {
+                                                currentWeight++;
+                                              });
+                                            },
+                                            child: Text(
+                                              "+",
+                                              style: TextStyle(fontSize: 20),
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              spaceBetween(),
+                              Expanded(
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: 20),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(color: Colors.black),
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "AGE",
+                                        style: TextStyle(
+                                            fontFamily: "SourceSansPro",
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      spaceBelow(),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.baseline,
+                                        textBaseline: TextBaseline.alphabetic,
+                                        children: [
+                                          Text(
+                                            currentAge.toString(),
+                                            style: TextStyle(
+                                                fontSize: 40,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          Text(
+                                            "yrs",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                shape: CircleBorder(),
+                                                backgroundColor:
+                                                    Color(0xff0B2447)),
+                                            onPressed: () {
+                                              setState(() {
+                                                currentAge--;
+                                              });
+                                            },
+                                            child: Text("-",
+                                                style: TextStyle(fontSize: 20)),
+                                          ),
+                                          spaceBetween(),
+                                          ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                shape: CircleBorder(),
+                                                backgroundColor:
+                                                    Color(0xff0B2447)),
+                                            onPressed: () {
+                                              setState(() {
+                                                currentAge++;
+                                              });
+                                            },
+                                            child: Text("+",
+                                                style: TextStyle(fontSize: 20)),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                           spaceBelow(),
                           Row(
@@ -338,20 +474,59 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ],
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          TextFormField(
-                            decoration: InputDecoration(
-                                labelText: "Target Weight",
-                                prefixIcon: Icon(Icons.pin_end),
-                                border: OutlineInputBorder()),
-                            validator: (value) {
-                              value!.isEmpty
-                                  ? "please enter your Target Weight"
-                                  : "null";
-                            },
-                            onSaved: (value) {},
+                          spaceBelow(),
+                          Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.black),
+                                borderRadius: BorderRadius.circular(10)),
+                            padding: EdgeInsets.all(20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Target Weight",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: "SourceSansPro",
+                                  ),
+                                ),
+                                spaceBelow(),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.baseline,
+                                  textBaseline: TextBaseline.alphabetic,
+                                  children: [
+                                    Text(
+                                      targetWeight.round().toString(),
+                                      style: TextStyle(
+                                          fontSize: 40,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      "cm",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                spaceBelow(),
+                                Slider(
+                                  activeColor: Color(0xff576CBC),
+                                  value: targetWeight,
+                                  max: 210,
+                                  label: currentSlider.toString(),
+                                  onChanged: (double value) {
+                                    setState(() {
+                                      targetWeight = value;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
                           ),
                           spaceBelow(),
                           Row(
