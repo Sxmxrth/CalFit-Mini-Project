@@ -39,6 +39,7 @@ dependencies:
   http: ^0.13.5
   flutter_animated_button: ^2.0.3
   sensors_plus: ^2.0.3
+  pedometer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
