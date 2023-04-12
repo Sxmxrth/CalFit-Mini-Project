@@ -14,6 +14,7 @@ class _fitnessCenterState extends State<fitnessCenter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffECF2FF),
       appBar: AppBar(
         toolbarHeight: 80,
         elevation: 0,

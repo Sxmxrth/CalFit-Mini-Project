@@ -15,7 +15,8 @@ class CardImageRight extends StatelessWidget {
         padding: EdgeInsets.only(top: 20),
         decoration: BoxDecoration(
             border: Border.all(color: Colors.black),
-            borderRadius: BorderRadius.circular(10)),
+            borderRadius: BorderRadius.circular(10),
+            color: Color(0xffC0DBEA)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -54,7 +55,8 @@ class CardImageLeft extends StatelessWidget {
         padding: EdgeInsets.only(top: 20),
         decoration: BoxDecoration(
             border: Border.all(color: Colors.black),
-            borderRadius: BorderRadius.circular(10)),
+            borderRadius: BorderRadius.circular(10),
+            color: Color(0xffFDF4F5)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
