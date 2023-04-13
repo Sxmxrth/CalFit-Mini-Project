@@ -5,10 +5,20 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AddUser {
   String name, gender, plan, medical, emotional;
-  int height, weight, age, phone, targetWeight;
+  int height, weight, age, phone, targetWeight, bmi;
 
-  AddUser(this.name, this.gender, this.phone, this.height, this.weight,
-      this.age, this.plan, this.targetWeight, this.medical, this.emotional);
+  AddUser(
+      this.name,
+      this.gender,
+      this.phone,
+      this.height,
+      this.weight,
+      this.age,
+      this.plan,
+      this.targetWeight,
+      this.medical,
+      this.emotional,
+      this.bmi);
 
   @override
   CollectionReference users = FirebaseFirestore.instance.collection("users");
@@ -25,7 +35,8 @@ class AddUser {
           "Plan": plan,
           "TargetWeight": targetWeight,
           "MedicalCondition": medical,
-          "EmotionalHealth": emotional
+          "EmotionalHealth": emotional,
+          "BMI": bmi
         })
         .then((value) => print("Users added"))
         .catchError((error) => print("failed to add user: $error"));

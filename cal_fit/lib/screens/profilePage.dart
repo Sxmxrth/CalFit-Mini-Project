@@ -1,11 +1,14 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
 
+import 'package:cal_fit/bmiCalculator.dart';
+import 'package:cal_fit/screens/dashboard.dart';
 import 'package:cal_fit/screens/signupPage.dart';
 import 'package:flutter/material.dart';
 import 'package:cal_fit/services/firestore_services.dart';
 
 final Map<String, WidgetBuilder> profileRoutes = {
   '/signup': (BuildContext context) => SignupPage(),
+  '/dashboard': (BuildContext context) => dashboard(),
 };
 
 List<String> options = ["Male", "Female"];
@@ -598,6 +601,8 @@ class _ProfilePageState extends State<ProfilePage> {
                           spaceBelow(),
                           ElevatedButton(
                             onPressed: () {
+                              bmiCalculator bmi = bmiCalculator(
+                                  currentWeight, currentSlider.round());
                               print(int.parse(phoneController.text));
                               AddUser addUser = AddUser(
                                   nameController.text,
@@ -609,8 +614,10 @@ class _ProfilePageState extends State<ProfilePage> {
                                   plan[selectedProgram],
                                   targetWeight.round(),
                                   selectedMedical,
-                                  selectedEmotional);
+                                  selectedEmotional,
+                                  bmi.calculateBMI());
                               addUser.addUser();
+                              Navigator.pushNamed(context, "/dashboard");
                               //Update the database with this info
                             },
                             child: Text("Update"),
