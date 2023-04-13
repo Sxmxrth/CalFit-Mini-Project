@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1092855744374",
+    "project_id": "calfit-d9112",
+    "storage_bucket": "calfit-d9112.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092855744374:android:a6bff9d760488b282ddc57",
+        "android_client_info": {
+          "package_name": "com.example.cal_fit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092855744374-o0i4u1aj34vfeavtmto90vsf9ghasf6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvKSVWSBAWPshpyBiNcGOPOEMhBAX8ECY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092855744374-o0i4u1aj34vfeavtmto90vsf9ghasf6p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

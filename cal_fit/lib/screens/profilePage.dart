@@ -2,12 +2,14 @@
 
 import 'package:cal_fit/screens/signupPage.dart';
 import 'package:flutter/material.dart';
+import 'package:cal_fit/services/firestore_services.dart';
 
 final Map<String, WidgetBuilder> profileRoutes = {
   '/signup': (BuildContext context) => SignupPage(),
 };
 
 List<String> options = ["Male", "Female"];
+List<String> plan = ["Weight Loss", "Weight Gain"];
 var selectedOptions = options[0];
 
 spaceBelow() {
@@ -49,8 +51,11 @@ var buttonColor1 = 0xff576CBC;
 var buttonColor2 = 0xff576CBC;
 var buttonColor3 = 0xff576CBC;
 var buttonColor4 = 0xff576CBC;
-var selectedGender = 1;
-var selectedProgram = 1;
+var selectedGender = 0;
+var selectedProgram = 0;
+
+TextEditingController nameController = TextEditingController();
+TextEditingController phoneController = TextEditingController();
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -149,6 +154,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Column(
                         children: [
                           TextFormField(
+                            controller: nameController,
                             decoration: InputDecoration(
                                 labelText: "Name",
                                 prefixIcon: Icon(Icons.person),
@@ -169,7 +175,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     setState(() {
                                       buttonColor1 = 0xff19376D;
                                       buttonColor2 = 0xff576CBC;
-                                      selectedGender = 1;
+                                      selectedGender = 0;
                                     });
                                   },
                                   style: ElevatedButton.styleFrom(
@@ -189,7 +195,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     setState(() {
                                       buttonColor2 = 0xff19376D;
                                       buttonColor1 = 0xff576CBC;
-                                      selectedGender = 2;
+                                      selectedGender = 1;
                                     });
                                   },
                                   onLongPress: () {},
@@ -207,6 +213,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           spaceBelow(),
                           TextFormField(
+                            controller: phoneController,
                             decoration: InputDecoration(
                                 labelText: "Phone",
                                 prefixIcon: Icon(Icons.phone),
@@ -438,7 +445,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     setState(() {
                                       buttonColor3 = 0xff19376D;
                                       buttonColor4 = 0xff576CBC;
-                                      selectedProgram = 1;
+                                      selectedProgram = 0;
                                     });
                                   },
                                   style: ElevatedButton.styleFrom(
@@ -458,7 +465,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     setState(() {
                                       buttonColor4 = 0xff19376D;
                                       buttonColor3 = 0xff576CBC;
-                                      selectedProgram = 2;
+                                      selectedProgram = 1;
                                     });
                                   },
                                   onLongPress: () {},
@@ -591,6 +598,19 @@ class _ProfilePageState extends State<ProfilePage> {
                           spaceBelow(),
                           ElevatedButton(
                             onPressed: () {
+                              print(int.parse(phoneController.text));
+                              AddUser addUser = AddUser(
+                                  nameController.text,
+                                  options[selectedGender],
+                                  int.parse(phoneController.text),
+                                  currentSlider.round(),
+                                  currentWeight,
+                                  currentAge,
+                                  plan[selectedProgram],
+                                  targetWeight.round(),
+                                  selectedMedical,
+                                  selectedEmotional);
+                              addUser.addUser();
                               //Update the database with this info
                             },
                             child: Text("Update"),
