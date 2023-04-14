@@ -2,9 +2,10 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 
 class AddUser {
-  String name, gender, plan, medical, emotional;
+  String name, gender, plan, medical, emotional, email, password;
   int height, weight, age, phone, targetWeight, bmi;
 
   AddUser(
@@ -18,7 +19,9 @@ class AddUser {
       this.targetWeight,
       this.medical,
       this.emotional,
-      this.bmi);
+      this.bmi,
+      this.email,
+      this.password);
 
   @override
   CollectionReference users = FirebaseFirestore.instance.collection("users");
@@ -36,9 +39,26 @@ class AddUser {
           "TargetWeight": targetWeight,
           "MedicalCondition": medical,
           "EmotionalHealth": emotional,
-          "BMI": bmi
+          "BMI": bmi,
+          "Email": email,
+          "Password": password
         })
         .then((value) => print("Users added"))
         .catchError((error) => print("failed to add user: $error"));
+  }
+}
+
+class GetUser {
+  String id;
+  GetUser(this.id);
+
+  CollectionReference users = FirebaseFirestore.instance.collection("users");
+
+  Future<String> getUser() async {
+    final DocumentSnapshot<Map<String, dynamic>> documentSnapshot =
+        await FirebaseFirestore.instance.collection('users').doc('id').get();
+
+    final Map<String, dynamic>? data = documentSnapshot.data();
+    return data!["Name"];
   }
 }

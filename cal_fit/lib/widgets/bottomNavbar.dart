@@ -1,9 +1,13 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors
+// ignore_for_file: camel_case_types, prefer_const_constructors, unnecessary_const
 
 import 'package:flutter/material.dart';
 import 'package:cal_fit/screens/profilePage.dart';
 import 'package:cal_fit/screens/dashboard.dart';
 import 'package:cal_fit/screens/fitnessCenter.dart';
+
+// final Map<String, WidgetBuilder> profileRoutes = {
+//   '/profilepage': (BuildContext context) => ProfilePage(),
+// };
 
 class bottomNavbar extends StatefulWidget {
   const bottomNavbar({super.key});
@@ -32,7 +36,10 @@ class _bottomNavbarState extends State<bottomNavbar> {
       'Index 3: Diet Options',
       style: optionStyle,
     ),
-    ProfilePage(),
+    Text(
+      'Index 4: Profile Page',
+      style: optionStyle,
+    ),
   ];
 
   void _onItemTapped(int index) {

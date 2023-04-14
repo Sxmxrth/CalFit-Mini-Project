@@ -1,10 +1,12 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, use_key_in_widget_constructors
 
 import 'package:cal_fit/bmiCalculator.dart';
 import 'package:cal_fit/screens/dashboard.dart';
 import 'package:cal_fit/screens/signupPage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:cal_fit/services/firestore_services.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 final Map<String, WidgetBuilder> profileRoutes = {
   '/signup': (BuildContext context) => SignupPage(),
@@ -57,21 +59,44 @@ var buttonColor4 = 0xff576CBC;
 var selectedGender = 0;
 var selectedProgram = 0;
 
-TextEditingController nameController = TextEditingController();
-TextEditingController phoneController = TextEditingController();
-
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+  final String uid;
+
+  ProfilePage({required this.uid});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  String _uid = '';
+  late String name;
+  late final TextEditingController nameController, phoneController;
+
+  @override
+  void initState() {
+    super.initState();
+    getUserData();
+  }
+
+  Future<void> getUserData() async {
+    DocumentSnapshot doc = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(widget.uid)
+        .get();
+    final Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+    setState(() {
+      name = data['Name'] as String;
+      nameController = TextEditingController(text: name ?? '');
+      phoneController = TextEditingController(text: data["Phone"] as String);
+    });
+  }
+
   double currentSlider = 120.0;
   double targetWeight = 40;
   int currentWeight = 40;
   int currentAge = 14;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -615,7 +640,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                   targetWeight.round(),
                                   selectedMedical,
                                   selectedEmotional,
-                                  bmi.calculateBMI());
+                                  bmi.calculateBMI(),
+                                  "",
+                                  "");
                               addUser.addUser();
                               Navigator.pushNamed(context, "/dashboard");
                               //Update the database with this info
