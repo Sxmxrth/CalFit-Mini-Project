@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_field, library_private_types_in_public_api, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, use_build_context_synchronously
 
 import 'dart:async';
+import 'package:cal_fit/widgets/bottomNavbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cal_fit/screens/loginPage.dart';
 import 'package:cal_fit/screens/profilePage.dart';
@@ -15,6 +16,7 @@ class SignupPage extends StatefulWidget {
 
 final Map<String, WidgetBuilder> profileRoutes = {
   '/signin': (BuildContext context) => SignInPage(),
+  '/dashboard': (BuildContext context) => bottomNavbar(),
 };
 
 class _SignupPageState extends State<SignupPage> {
@@ -48,12 +50,14 @@ class _SignupPageState extends State<SignupPage> {
       "BMI": 0,
     });
 
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ProfilePage(uid: user!.uid),
-      ),
-    );
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) => ProfilePage(uid: user!.uid),
+    //   ),
+    // );
+
+    Navigator.pushNamed(context, "/dashboard");
   }
 
   @override

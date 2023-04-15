@@ -60,42 +60,45 @@ var selectedGender = 0;
 var selectedProgram = 0;
 
 class ProfilePage extends StatefulWidget {
-  final String uid;
+  // final String uid;
 
-  ProfilePage({required this.uid});
+  const ProfilePage({super.key});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  String _uid = '';
-  late String name;
-  late final TextEditingController nameController, phoneController;
+  // final String _uid = '';
+  // String name = "";
+  // late final TextEditingController nameController, phoneController;
 
-  @override
-  void initState() {
-    super.initState();
-    getUserData();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   getUserData();
+  // }
 
-  Future<void> getUserData() async {
-    DocumentSnapshot doc = await FirebaseFirestore.instance
-        .collection('users')
-        .doc(widget.uid)
-        .get();
-    final Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-    setState(() {
-      name = data['Name'] as String;
-      nameController = TextEditingController(text: name ?? '');
-      phoneController = TextEditingController(text: data["Phone"] as String);
-    });
-  }
+  // Future<void> getUserData() async {
+  //   DocumentSnapshot doc = await FirebaseFirestore.instance
+  //       .collection('users')
+  //       .doc(widget.uid)
+  //       .get();
+  //   final Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+  //   setState(() {
+  //     name = data['Name'] as String;
+  //     print(name);
+  //     nameController = TextEditingController(text: name);
+  //     phoneController = TextEditingController(text: data["Phone"] as String);
+  //   });
+  // }
 
   double currentSlider = 120.0;
   double targetWeight = 40;
   int currentWeight = 40;
   int currentAge = 14;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

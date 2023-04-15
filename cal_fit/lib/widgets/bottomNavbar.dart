@@ -36,10 +36,11 @@ class _bottomNavbarState extends State<bottomNavbar> {
       'Index 3: Diet Options',
       style: optionStyle,
     ),
-    Text(
-      'Index 4: Profile Page',
-      style: optionStyle,
-    ),
+    // Text(
+    //   'Index 4: Profile Page',
+    //   style: optionStyle,
+    // ),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
