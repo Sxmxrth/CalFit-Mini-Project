@@ -2,6 +2,7 @@
 
 import 'package:cal_fit/screens/loginPage.dart';
 import 'package:cal_fit/screens/signupPage.dart';
+import 'package:cal_fit/widgets/bottomNavbar.dart';
 import 'package:flutter/material.dart';
 
 final Map<String, WidgetBuilder> profileRoutes = {
@@ -74,6 +75,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      // bottomNavigationBar: bottomNavbar(),
     );
   }
 }

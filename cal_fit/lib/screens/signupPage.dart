@@ -17,6 +17,7 @@ class SignupPage extends StatefulWidget {
 final Map<String, WidgetBuilder> profileRoutes = {
   '/signin': (BuildContext context) => SignInPage(),
   '/dashboard': (BuildContext context) => bottomNavbar(),
+  '/profilepage': (BuildContext context) => ProfilePage(),
 };
 
 class _SignupPageState extends State<SignupPage> {

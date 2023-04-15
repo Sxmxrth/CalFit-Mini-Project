@@ -17,82 +17,90 @@ class bottomNavbar extends StatefulWidget {
 }
 
 class _bottomNavbarState extends State<bottomNavbar> {
+  final List<BottomNavigationBarItem> bottomNavBarItems = [
+    BottomNavigationBarItem(
+        icon: Icon(Icons.dashboard),
+        label: 'Dashboard',
+        backgroundColor: Color(0xff0B2447)),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.fitness_center),
+        label: 'Fitness Center',
+        backgroundColor: Color(0xff0B2447)),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.add),
+        label: 'Calories',
+        backgroundColor: Color(0xff0B2447)),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.food_bank),
+        label: 'Diet',
+        backgroundColor: Color(0xff0B2447)),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.person),
+        label: 'Profile',
+        backgroundColor: Color(0xff0B2447)),
+  ];
+
+  final List<Widget> screens = [
+    dashboard(),
+    fitnessCenter(),
+    ProfilePage(),
+  ];
+
   int _selectedIndex = 0;
+
+  Widget currentScreen = dashboard();
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    dashboard(),
-    fitnessCenter(),
-    // Text(
-    //   'Index 1: Fitness Center',
-    //   style: optionStyle,
-    // ),
-    Text(
-      'Index 2: Calorie',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Diet Options',
-      style: optionStyle,
-    ),
-    // Text(
-    //   'Index 4: Profile Page',
-    //   style: optionStyle,
-    // ),
-    ProfilePage(),
-  ];
+  // static const List<Widget> _widgetOptions = <Widget>[
+  //   dashboard(),
+  //   fitnessCenter(),
+  //   // Text(
+  //   //   'Index 1: Fitness Center',
+  //   //   style: optionStyle,
+  //   // ),
+  //   Text(
+  //     'Index 2: Calorie',
+  //     style: optionStyle,
+  //   ),
+  //   Text(
+  //     'Index 3: Diet Options',
+  //     style: optionStyle,
+  //   ),
+  //   // Text(
+  //   //   'Index 4: Profile Page',
+  //   //   style: optionStyle,
+  //   // ),
+  //   ProfilePage(),
+  // ];
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      currentScreen = screens[_selectedIndex];
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
-        backgroundColor: Color(0xff19376D),
-        child: const Icon(Icons.chat_bubble),
+      // body: Center(
+      //   child: _widgetOptions.elementAt(_selectedIndex),
+      // ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     // Add your onPressed code here!
+      //   },
+      //   backgroundColor: Color(0xff19376D),
+      //   child: const Icon(Icons.chat_bubble),
+      // ),
+      body: Navigator(
+        onGenerateRoute: (settings) =>
+            MaterialPageRoute(builder: (context) => currentScreen),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Dashboard',
-            backgroundColor: Color(0xff0B2447),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center),
-            label: 'Fitness',
-            backgroundColor: Color(0xff0B2447),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.add,
-              size: 40,
-            ),
-            label: 'Calories',
-            backgroundColor: Color(0xff0B2447),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.food_bank),
-            label: 'Diet',
-            backgroundColor: Color(0xff0B2447),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-            backgroundColor: Color(0xff0B2447),
-          ),
-        ],
+        backgroundColor: Color(0xff0B2447),
+        items: bottomNavBarItems,
         currentIndex: _selectedIndex,
         selectedItemColor: Color(0xffA5D7E8),
         unselectedIconTheme: IconThemeData(size: 30),

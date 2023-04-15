@@ -19,6 +19,7 @@ final Map<String, WidgetBuilder> routes = {
   '/signup': (BuildContext context) => SignupPage(),
   '/signin': (BuildContext context) => SignInPage(),
   '/dashboard': (BuildContext context) => bottomNavbar(),
+  '/profilepage': (BuildContext context) => ProfilePage()
 };
 
 class MyApp extends StatelessWidget {
