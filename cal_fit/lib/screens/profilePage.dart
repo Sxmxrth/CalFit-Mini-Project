@@ -106,6 +106,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Color(0xffECF2FF),
       appBar: AppBar(
+        elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.fromLTRB(4, 10, 0, 0),
           child: IconButton(
@@ -185,18 +186,21 @@ class _ProfilePageState extends State<ProfilePage> {
                       padding: const EdgeInsets.all(25.0),
                       child: Column(
                         children: [
-                          TextFormField(
-                            controller: nameController,
-                            decoration: InputDecoration(
-                                labelText: "Name",
-                                prefixIcon: Icon(Icons.person),
-                                border: OutlineInputBorder()),
-                            validator: (value) {
-                              value!.isEmpty
-                                  ? "please enter your name"
-                                  : "null";
-                            },
-                            onSaved: (value) {},
+                          Container(
+                            color: Color(0xffFDF4F5),
+                            child: TextFormField(
+                              controller: nameController,
+                              decoration: InputDecoration(
+                                  labelText: "Name",
+                                  prefixIcon: Icon(Icons.person),
+                                  border: OutlineInputBorder()),
+                              validator: (value) {
+                                value!.isEmpty
+                                    ? "please enter your name"
+                                    : "null";
+                              },
+                              onSaved: (value) {},
+                            ),
                           ),
                           spaceBelow(),
                           Row(
@@ -244,22 +248,26 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                           spaceBelow(),
-                          TextFormField(
-                            controller: phoneController,
-                            decoration: InputDecoration(
-                                labelText: "Phone",
-                                prefixIcon: Icon(Icons.phone),
-                                border: OutlineInputBorder()),
-                            validator: (value) {
-                              value!.isEmpty
-                                  ? "please enter your phone number"
-                                  : "null";
-                            },
-                            onSaved: (value) {},
+                          Container(
+                            color: Color(0xffFDF4F5),
+                            child: TextFormField(
+                              controller: phoneController,
+                              decoration: InputDecoration(
+                                  labelText: "Phone",
+                                  prefixIcon: Icon(Icons.phone),
+                                  border: OutlineInputBorder()),
+                              validator: (value) {
+                                value!.isEmpty
+                                    ? "please enter your phone number"
+                                    : "null";
+                              },
+                              onSaved: (value) {},
+                            ),
                           ),
                           spaceBelow(),
                           Container(
                             decoration: BoxDecoration(
+                                color: Color(0xffFDF4F5),
                                 border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(10)),
                             padding: EdgeInsets.all(20),
@@ -319,6 +327,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 child: Container(
                                   padding: EdgeInsets.symmetric(vertical: 20),
                                   decoration: BoxDecoration(
+                                      color: Color(0xffFDF4F5),
                                       border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(10)),
                                   child: Column(
@@ -396,6 +405,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 child: Container(
                                   padding: EdgeInsets.symmetric(vertical: 20),
                                   decoration: BoxDecoration(
+                                      color: Color(0xffFDF4F5),
                                       border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(10)),
                                   child: Column(
@@ -516,6 +526,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           spaceBelow(),
                           Container(
                             decoration: BoxDecoration(
+                                color: Color(0xffFDF4F5),
                                 border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(10)),
                             padding: EdgeInsets.all(20),
@@ -579,6 +590,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ),
                               ),
                               DropdownButton(
+                                dropdownColor: Color(0xffFDF4F5),
                                 value: selectedMedical,
                                 onChanged: (String? value) {
                                   // This is called when the user selects an item.
@@ -609,6 +621,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ),
                               ),
                               DropdownButton(
+                                dropdownColor: Color(0xffFDF4F5),
                                 value: selectedEmotional,
                                 onChanged: (String? value) {
                                   // This is called when the user selects an item.
@@ -627,6 +640,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ],
                           ),
+                          spaceBelow(),
                           spaceBelow(),
                           ElevatedButton(
                             onPressed: () {
@@ -653,7 +667,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             },
                             child: Text("Update"),
                             style: ElevatedButton.styleFrom(
-                                minimumSize: Size(100, 40),
+                                minimumSize: Size(200, 60),
                                 backgroundColor: Color(0xff0B2447)),
                           )
                         ],

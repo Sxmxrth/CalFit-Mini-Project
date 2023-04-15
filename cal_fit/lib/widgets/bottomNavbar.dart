@@ -1,5 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, unnecessary_const
 
+import 'package:cal_fit/screens/calories.dart';
+import 'package:cal_fit/screens/diet.dart';
 import 'package:flutter/material.dart';
 import 'package:cal_fit/screens/profilePage.dart';
 import 'package:cal_fit/screens/dashboard.dart';
@@ -43,6 +45,8 @@ class _bottomNavbarState extends State<bottomNavbar> {
   final List<Widget> screens = [
     dashboard(),
     fitnessCenter(),
+    Calories(),
+    Diet(),
     ProfilePage(),
   ];
 
