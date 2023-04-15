@@ -1,14 +1,33 @@
 // ignore_for_file: file_names, use_key_in_widget_constructors, prefer_const_constructors
+import 'package:cal_fit/screens/exercise.dart';
 import 'package:flutter/material.dart';
 
 class CardImageRight extends StatelessWidget {
-  String image, content;
-  CardImageRight({required this.image, required this.content});
+  String image, content, type;
+  CardImageRight(
+      {required this.image, required this.content, required this.type});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        if (type == "Cardio") {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Exercise()),
+          );
+        } else if (type == "Chest") {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Exercise()),
+          );
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Exercise()),
+          );
+        }
+      },
       child: Container(
         padding: EdgeInsets.only(top: 20),
         decoration: BoxDecoration(
@@ -42,8 +61,9 @@ class CardImageRight extends StatelessWidget {
 }
 
 class CardImageLeft extends StatelessWidget {
-  String image, content;
-  CardImageLeft({required this.image, required this.content});
+  String image, content, type;
+  CardImageLeft(
+      {required this.image, required this.content, required this.type});
 
   @override
   Widget build(BuildContext context) {

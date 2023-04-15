@@ -14,8 +14,10 @@ class Calories extends StatefulWidget {
 class _CaloriesState extends State<Calories> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Calories"),
+    return Scaffold(
+      body: Center(
+        child: Text("Calories"),
+      ),
     );
   }
 }

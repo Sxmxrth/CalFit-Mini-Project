@@ -41,10 +41,12 @@ class _dashboardState extends State<dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Step count: $_stepCount',
-        style: TextStyle(fontSize: 24.0),
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Step count: $_stepCount',
+          style: TextStyle(fontSize: 24.0),
+        ),
       ),
     );
   }

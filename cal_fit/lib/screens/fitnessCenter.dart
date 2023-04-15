@@ -46,34 +46,43 @@ class _fitnessCenterState extends State<fitnessCenter> {
                 height: 15,
               ),
               CardImageRight(
-                  image: "images/cardio.png",
-                  content:
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
+                image: "images/cardio.png",
+                content:
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                type: "Cardio",
+              ),
               SizedBox(height: 20),
               CardImageLeft(
-                  image: "images/core.png",
-                  content:
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
+                image: "images/core.png",
+                content:
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                type: "Core",
+              ),
               SizedBox(height: 20),
               CardImageRight(
-                  image: "images/chest.png",
-                  content:
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
+                image: "images/chest.png",
+                content:
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                type: "Chest",
+              ),
               SizedBox(height: 20),
               CardImageLeft(
-                  image: "images/back.png",
-                  content:
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
+                image: "images/back.png",
+                content:
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                type: "Back",
+              ),
               SizedBox(height: 20),
               CardImageRight(
-                  image: "images/legs.png",
-                  content:
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
+                image: "images/legs.png",
+                content:
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                type: "Legs",
+              ),
             ],
           ),
         ],
       ),
-      // bottomNavigationBar: bottomNavbar(),
     );
   }
 }

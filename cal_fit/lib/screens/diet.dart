@@ -9,8 +9,10 @@ class Diet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Diet"),
+    return Scaffold(
+      body: Center(
+        child: Text("Diet"),
+      ),
     );
   }
 }
