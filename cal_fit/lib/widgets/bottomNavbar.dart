@@ -45,7 +45,7 @@ class _bottomNavbarState extends State<bottomNavbar> {
   final List<Widget> screens = [
     dashboard(),
     fitnessCenter(),
-    Calories(),
+    CalorieCounterPage(),
     Diet(),
     ProfilePage(),
   ];
