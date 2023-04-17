@@ -54,28 +54,29 @@
 //   }
 // }
 
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:charts_flutter_new/flutter.dart' as charts;
-import 'package:cal_fit/widgets/circleProgress.dart';
-import 'package:flutter/services.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 // void main() => runApp(Calorie());
 
-class Calorie extends StatelessWidget {
+class Calorie extends StatefulWidget {
+  @override
+  State<Calorie> createState() => _CalorieState();
+}
+
+class _CalorieState extends State<Calorie>
+    with AutomaticKeepAliveClientMixin<Calorie> {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Calorie Counter',
-      theme: ThemeData(
-        // primarySwatch: Colors.indigo.shade900;
-        // visualDensity: VisualDensity.adaptivePlatformDensity
-        colorSchemeSeed: Colors.indigo.shade900,
-      ),
-      home: CalorieCounterPage(),
-      debugShowCheckedModeBanner: false,
-    );
+    super.build(context);
+
+    return CalorieCounterPage();
   }
 }
 
@@ -85,26 +86,11 @@ class CalorieCounterPage extends StatefulWidget {
 }
 
 class _CalorieCounterPageState extends State<CalorieCounterPage>
-    with SingleTickerProviderStateMixin {
-  int _caloriesConsumed = 0;
+    with AutomaticKeepAliveClientMixin<CalorieCounterPage> {
   final List<charts.Series<CalorieData, String>> _chartData = [];
-  late AnimationController _animationController;
-  late Animation<double> _animation;
-  final double maxProgress = 1000;
-  TextEditingController myController = TextEditingController(text: "0");
-  // final _FormField = GlobalKey<FormState>();
-
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 3000));
-
-    _animation =
-        Tween<double>(begin: 0, end: maxProgress).animate(_animationController)
-          ..addListener(() {
-            setState(() {});
-          });
     _chartData.add(
       charts.Series<CalorieData, String>(
         id: 'calories',
@@ -123,20 +109,29 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
     );
   }
 
-  void _addCalories(int amount) {
+  TextEditingController caloriesController = TextEditingController(text: "0");
+  double caloriesBurnt = 0;
+  double maxCalories = 5000;
+
+  void updateCaloriesBurnt(double newValue) {
     setState(() {
-      _caloriesConsumed += amount;
+      caloriesBurnt += newValue;
       final dayIndex = DateTime.now().weekday - 1;
       final todayData = _chartData[0].data[dayIndex];
       _chartData[0].data[dayIndex] = CalorieData(
         todayData.day,
-        todayData.calories + amount,
+        todayData.calories + newValue.toInt(),
       );
     });
   }
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
@@ -147,40 +142,27 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
       body: Center(
         child: SingleChildScrollView(
           child: CustomPaint(
-            foregroundPainter: CircleProgress(_animation.value),
             child: Column(
               children: [
-                SizedBox(
-                  width: 150,
-                  height: 300,
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: GestureDetector(
-                      onTap: () {
-                        if (_animation.value == maxProgress) {
-                          _animationController.reverse();
-                        } else {
-                          _animationController.forward();
-                        }
-                      },
-                      child: Center(
-                        child: Text(
-                          '${_animation.value.toInt()}',
-                          style: const TextStyle(fontSize: 25),
-                        ),
-                      ),
-                    ),
+                CircularPercentIndicator(
+                  startAngle: 180.0,
+                  radius: 120.0,
+                  lineWidth: 10.0,
+                  percent: caloriesBurnt / maxCalories, // Updated value
+                  center: Text(
+                    (caloriesBurnt).toStringAsFixed(0),
+                    style: TextStyle(fontSize: 20.0),
                   ),
+                  progressColor: Color(0xff980F5A),
                 ),
+                SizedBox(height: 20),
                 Container(
                   child: SingleChildScrollView(
                     child: Column(
-                      // verticalDirection: VerticalDirection.up,
-                      // crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'Calories Consumed: $_caloriesConsumed',
+                          'Calories Consumed: ${caloriesBurnt.toInt()}',
                           style: const TextStyle(fontSize: 18),
                         ),
                         SizedBox(height: 20),
@@ -193,24 +175,14 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
                           ),
                         ),
                         SizedBox(height: 20),
-                        // Form(
-                        // key: _FormField,
                         Column(
-                          // verticalDirection: VerticalDirection.down,
-                          // crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             SizedBox(
                               width: 350.0,
                               child: TextFormField(
-                                controller: myController,
                                 keyboardType: TextInputType.number,
-                                inputFormatters: <TextInputFormatter>[
-                                  FilteringTextInputFormatter.allow(
-                                    RegExp(r'[0-9.]'),
-                                  ),
-                                  // FilteringTextInputFormatter.digitsOnly,
-                                ],
+                                controller: caloriesController,
                                 decoration: InputDecoration(
                                   hintText: 'Enter your calorie intake',
                                   border: const OutlineInputBorder(),
@@ -221,9 +193,9 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
                                   suffixIcon: IconButton(
                                     onPressed: () {
                                       setState(() {
-                                        _addCalories(
-                                            int.parse(myController.text));
-                                        myController.clear();
+                                        updateCaloriesBurnt(double.parse(
+                                            caloriesController.text));
+                                        caloriesController.clear();
                                       });
                                     },
                                     icon: const Icon(Icons.clear),
