@@ -1,10 +1,11 @@
-// // ignore_for_file: prefer_const_constructors, prefer_const_declarations, use_function_type_syntax_for_parameters
+// ignore_for_file: prefer_const_constructors, prefer_const_declarations, use_function_type_syntax_for_parameters
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, avoid_unnecessary_containers
 
-// import 'package:flutter/material.dart';
-// import 'package:flutter/src/widgets/framework.dart';
-// import 'package:flutter/src/widgets/placeholder.dart';
-// import 'package:http/http.dart' as http;
-// import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:charts_flutter_new/flutter.dart' as charts;
+import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 // class Calories extends StatefulWidget {
 //   const Calories({super.key});
@@ -13,23 +14,21 @@
 //   State<Calories> createState() => _CaloriesState();
 // }
 
-// final String apiKey = 'tfrgbMHWlLMua08CwmmR8Y83UCrhV6ezK83oK5Qo';
-// final String foodItem = '1 Roti';
-// final String apiUrl =
-//     "https://api.api-ninjas.com/v1/nutrition?query=${foodItem}";
-// String nutrients = "";
-// fetchNutrients() async {
-//   await http
-//       .get(Uri.parse(apiUrl), headers: {'X-Api-Key': apiKey}).then((response) {
-//     if (response.statusCode == 200) {
-//       print(response.body);
-//       nutrients = response.body;
-//     } else {
-//       throw Exception('Failed to load nutrient information');
-//     }
-//   });
-//   return jsonDecode(nutrients);
-// }
+fetchNutrients(String foodItem) async {
+  final String apiKey = 'tfrgbMHWlLMua08CwmmR8Y83UCrhV6ezK83oK5Qo';
+  final String apiUrl =
+      "https://api.api-ninjas.com/v1/nutrition?query=${foodItem}";
+  String nutrients = "";
+  http.Response response =
+      await http.get(Uri.parse(apiUrl), headers: {'X-Api-Key': apiKey});
+  if (response.statusCode == 200) {
+    nutrients = response.body;
+    // print(jsonDecode(nutrients)[0]);
+    return jsonDecode(nutrients)[0];
+  } else {
+    throw Exception('Failed to load nutrient information');
+  }
+}
 
 // class _CaloriesState extends State<Calories> {
 //   @override
@@ -53,12 +52,6 @@
 //     );
 //   }
 // }
-
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, avoid_unnecessary_containers
-
-import 'package:flutter/material.dart';
-import 'package:charts_flutter_new/flutter.dart' as charts;
-import 'package:percent_indicator/circular_percent_indicator.dart';
 
 // void main() => runApp(Calorie());
 
@@ -127,7 +120,7 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
 
   @override
   bool get wantKeepAlive => true;
-
+  Map<dynamic, dynamic> calorie = {};
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -135,6 +128,7 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
+        elevation: 0,
         backgroundColor: Color(0xff19376D),
         centerTitle: true,
         title: const Text('Calories'),
@@ -181,7 +175,7 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
                             SizedBox(
                               width: 350.0,
                               child: TextFormField(
-                                keyboardType: TextInputType.number,
+                                // keyboardType: TextInputType.number,
                                 controller: caloriesController,
                                 decoration: InputDecoration(
                                   hintText: 'Enter your calorie intake',
@@ -191,14 +185,19 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
                                     vertical: 20.0,
                                   ),
                                   suffixIcon: IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        updateCaloriesBurnt(double.parse(
-                                            caloriesController.text));
+                                    onPressed: () async {
+                                      Future<String> calorie =
+                                          await fetchNutrients(
+                                              caloriesController.text);
+                                      print(calorie);
+                                      setState(() async {
+                                        updateCaloriesBurnt(fetchNutrients(
+                                            caloriesController
+                                                .text)["calorie"]);
                                         caloriesController.clear();
                                       });
                                     },
-                                    icon: const Icon(Icons.clear),
+                                    icon: const Icon(Icons.check),
                                   ),
                                 ),
                               ),

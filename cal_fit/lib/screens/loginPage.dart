@@ -24,6 +24,7 @@ class _SignInPageState extends State<SignInPage> {
       backgroundColor: Color(0xffECF2FF),
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        elevation: 0,
         title: Center(
             child: Text(
           'Sign In',
