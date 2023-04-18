@@ -67,6 +67,7 @@ class _SignupPageState extends State<SignupPage> {
       backgroundColor: Color(0xffECF2FF),
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        elevation: 0,
         title: Center(
           child: Text(
             'Signup',

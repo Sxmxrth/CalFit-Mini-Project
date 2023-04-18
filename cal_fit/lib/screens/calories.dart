@@ -135,7 +135,7 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
-        backgroundColor: Color(0xff0B2447),
+        backgroundColor: Color(0xff19376D),
         centerTitle: true,
         title: const Text('Calories'),
       ),
