@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
               child: Text(
                 "CalFit",
                 style: TextStyle(
-                  fontSize: 60,
+                  fontSize: 62,
                   fontWeight: FontWeight.bold,
                   fontFamily: "SourceSansPro",
                   color: Color(0xffA5D7E8),
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 30),
               margin: EdgeInsets.only(top: 8, bottom: 30),
               child: Text(
-                "FIND OUT EXACTLY WHAT DIET & TRAINING WILL WORK SPECIFICALLY FOR YOU",
+                "Get fit, feel great - one step at a time!",
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w400,
@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: 15),
               child: Image.asset(
                 "images/fitnessModel.png",
-                height: 290,
+                height: 300,
               ),
             )
           ],
