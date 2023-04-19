@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_const_constructors, unused_field, library_private_types_in_public_api, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, use_build_context_synchronously
 
-import 'dart:async';
 import 'package:cal_fit/widgets/bottomNavbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cal_fit/screens/loginPage.dart';
 import 'package:cal_fit/screens/profilePage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:cal_fit/services/firestore_services.dart';
+import 'package:lottie/lottie.dart';
 
 class SignupPage extends StatefulWidget {
   @override
@@ -66,6 +65,7 @@ class _SignupPageState extends State<SignupPage> {
     return Scaffold(
       backgroundColor: Color(0xffECF2FF),
       appBar: AppBar(
+        toolbarHeight: 80,
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Center(
@@ -73,7 +73,7 @@ class _SignupPageState extends State<SignupPage> {
             'Signup',
             style: TextStyle(
               fontFamily: "SourceSansPro",
-              fontSize: 25,
+              fontSize: 30,
             ),
           ),
         ),
@@ -89,12 +89,12 @@ class _SignupPageState extends State<SignupPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 15),
-                    child: Image.asset(
-                      "images/gym1.png",
-                      height: 200,
-                    ),
+                  Lottie.asset(
+                    "animations/logingif.json",
+                    height: 260,
+                    width: 250,
+                    reverse: true,
+                    repeat: true,
                   ),
                   TextFormField(
                     controller: nameController,

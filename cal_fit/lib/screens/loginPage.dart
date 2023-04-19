@@ -2,6 +2,7 @@
 
 import 'package:cal_fit/widgets/bottomNavbar.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -23,6 +24,7 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
       backgroundColor: Color(0xffECF2FF),
       appBar: AppBar(
+        toolbarHeight: 80,
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Center(
@@ -30,7 +32,7 @@ class _SignInPageState extends State<SignInPage> {
           'Sign In',
           style: TextStyle(
             fontFamily: "SourceSansPro",
-            fontSize: 25,
+            fontSize: 30,
           ),
         )),
         backgroundColor: Color(0xff0B2447),
@@ -45,12 +47,9 @@ class _SignInPageState extends State<SignInPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 15),
-                    child: Image.asset(
-                      "images/gym2.png",
-                      height: 230,
-                    ),
+                  Lottie.asset(
+                    "animations/signingif.json",
+                    height: 275,
                   ),
                   Container(
                     child: Center(
