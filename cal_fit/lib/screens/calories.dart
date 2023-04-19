@@ -90,12 +90,18 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
     super.build(context);
 
     return Scaffold(
+      backgroundColor: Color(0xffECF2FF),
       appBar: AppBar(
         toolbarHeight: 80,
         elevation: 0,
         backgroundColor: Color(0xff19376D),
         centerTitle: true,
-        title: const Text('Calories'),
+        title: const Text(
+          'Calorie Counter',
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -104,7 +110,7 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
               children: [
                 CircularPercentIndicator(
                   startAngle: 180.0,
-                  radius: 120.0,
+                  radius: 110.0,
                   lineWidth: 10.0,
                   percent: caloriesBurnt / maxCalories, // Updated value
                   center: Text(

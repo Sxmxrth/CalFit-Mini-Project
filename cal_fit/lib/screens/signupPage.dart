@@ -91,7 +91,7 @@ class _SignupPageState extends State<SignupPage> {
                 children: <Widget>[
                   Lottie.asset(
                     "animations/logingif.json",
-                    height: 260,
+                    height: 250,
                     width: 250,
                     reverse: true,
                     repeat: true,
