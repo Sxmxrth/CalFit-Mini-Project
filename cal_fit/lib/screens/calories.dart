@@ -163,7 +163,6 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
                             ),
                           ],
                         ),
-                        // ),
                       ],
                     ),
                   ),
