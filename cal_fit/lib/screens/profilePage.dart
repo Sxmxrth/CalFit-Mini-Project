@@ -3,8 +3,6 @@
 import 'package:cal_fit/bmiCalculator.dart';
 import 'package:cal_fit/screens/dashboard.dart';
 import 'package:cal_fit/screens/signupPage.dart';
-import 'package:cal_fit/widgets/bottomNavbar.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:cal_fit/services/firestore_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
