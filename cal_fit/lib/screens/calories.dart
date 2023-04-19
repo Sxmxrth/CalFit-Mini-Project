@@ -7,54 +7,6 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-// class Calories extends StatefulWidget {
-//   const Calories({super.key});
-
-//   @override
-//   State<Calories> createState() => _CaloriesState();
-// }
-
-fetchNutrients(String foodItem) async {
-  final String apiKey = 'tfrgbMHWlLMua08CwmmR8Y83UCrhV6ezK83oK5Qo';
-  final String apiUrl =
-      "https://api.api-ninjas.com/v1/nutrition?query=${foodItem}";
-  String nutrients = "";
-  http.Response response =
-      await http.get(Uri.parse(apiUrl), headers: {'X-Api-Key': apiKey});
-  if (response.statusCode == 200) {
-    nutrients = response.body;
-    // print(jsonDecode(nutrients)[0]);
-    return jsonDecode(nutrients)[0];
-  } else {
-    throw Exception('Failed to load nutrient information');
-  }
-}
-
-// class _CaloriesState extends State<Calories> {
-//   @override
-//   Widget build(BuildContext context) {
-//     // fetchNutrients();
-//     return Scaffold(
-//       body: Center(
-//         child: FutureBuilder(
-//           future: fetchNutrients(),
-//           builder: (context, snapshot) {
-//             if (snapshot.connectionState == ConnectionState.waiting) {
-//               return CircularProgressIndicator();
-//             }
-//             if (snapshot.hasError) {
-//               return Text('Error: ${snapshot.error}');
-//             }
-//             return Text('Nutrients: ${snapshot.data}');
-//           },
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// void main() => runApp(Calorie());
-
 class Calorie extends StatefulWidget {
   @override
   State<Calorie> createState() => _CalorieState();
@@ -106,16 +58,28 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
   double caloriesBurnt = 0;
   double maxCalories = 5000;
 
-  void updateCaloriesBurnt(double newValue) {
-    setState(() {
-      caloriesBurnt += newValue;
-      final dayIndex = DateTime.now().weekday - 1;
-      final todayData = _chartData[0].data[dayIndex];
-      _chartData[0].data[dayIndex] = CalorieData(
-        todayData.day,
-        todayData.calories + newValue.toInt(),
-      );
-    });
+  void updateCaloriesBurnt(String foodItem) async {
+    final String apiKey = 'tfrgbMHWlLMua08CwmmR8Y83UCrhV6ezK83oK5Qo';
+    final String apiUrl =
+        "https://api.api-ninjas.com/v1/nutrition?query=${foodItem}";
+    String nutrients = "";
+    http.Response response =
+        await http.get(Uri.parse(apiUrl), headers: {'X-Api-Key': apiKey});
+    if (response.statusCode == 200) {
+      nutrients = response.body;
+      print((jsonDecode(nutrients))[0]["calories"]);
+      setState(() {
+        caloriesBurnt += jsonDecode(nutrients)[0]["calories"];
+        final dayIndex = DateTime.now().weekday - 1;
+        final todayData = _chartData[0].data[dayIndex];
+        _chartData[0].data[dayIndex] = CalorieData(
+          todayData.day,
+          todayData.calories + caloriesBurnt.toInt(),
+        );
+      });
+    } else {
+      throw Exception('Failed to load nutrient information');
+    }
   }
 
   @override
@@ -185,15 +149,10 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
                                     vertical: 20.0,
                                   ),
                                   suffixIcon: IconButton(
-                                    onPressed: () async {
-                                      Future<String> calorie =
-                                          await fetchNutrients(
-                                              caloriesController.text);
-                                      print(calorie);
-                                      setState(() async {
-                                        updateCaloriesBurnt(fetchNutrients(
-                                            caloriesController
-                                                .text)["calorie"]);
+                                    onPressed: () {
+                                      setState(() {
+                                        updateCaloriesBurnt(
+                                            caloriesController.text);
                                         caloriesController.clear();
                                       });
                                     },
