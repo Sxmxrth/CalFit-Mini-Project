@@ -116,8 +116,8 @@ class _dashboardState extends State<dashboard> {
                 children: [
                   stepCounterCard("Distance", Icons.pin_drop_outlined, "100km"),
                   stepCounterCard("Speed", Icons.speed_sharp, "3.5km/hr"),
-                  stepCounterCard(
-                      "Frequency", Icons.network_check_sharp, "56st/hr"),
+                  stepCounterCard("Calories",
+                      Icons.local_fire_department_outlined, "300/hr"),
                 ],
               ),
             )

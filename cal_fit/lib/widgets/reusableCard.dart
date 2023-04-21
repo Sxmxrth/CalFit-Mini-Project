@@ -8,37 +8,39 @@ class CardImageRight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        padding: EdgeInsets.only(top: 20),
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.black),
-            borderRadius: BorderRadius.circular(10),
-            color: Color(0xffC0DBEA)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              width: 150,
-              height: 150,
-              child: Text(
-                content,
-                style: TextStyle(fontSize: 14),
+    return Builder(builder: (BuildContext context) {
+      return GestureDetector(
+        onTap: () {},
+        child: Container(
+          padding: EdgeInsets.only(top: 20, left: 5),
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.black),
+              borderRadius: BorderRadius.circular(10),
+              color: Color(0xffC0DBEA)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 150,
+                height: 150,
+                child: Text(
+                  content,
+                  style: TextStyle(fontSize: 14),
+                ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: 30),
-              child: Image.asset(
-                image,
-                height: 130,
+              Container(
+                margin: EdgeInsets.only(bottom: 30),
+                child: Image.asset(
+                  image,
+                  height: 130,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
 
