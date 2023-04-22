@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, use_key_in_widget_constructors
 
 import 'package:cal_fit/bmiCalculator.dart';
+import 'package:cal_fit/bmrCalculator.dart';
 import 'package:cal_fit/screens/dashboard.dart';
 import 'package:cal_fit/screens/signupPage.dart';
 import 'package:flutter/material.dart';
@@ -644,6 +645,11 @@ class _ProfilePageState extends State<ProfilePage> {
                             onPressed: () {
                               bmiCalculator bmi = bmiCalculator(
                                   currentWeight, currentSlider.round());
+                              bmrCalculator bmr = bmrCalculator(
+                                  currentWeight,
+                                  currentSlider.round(),
+                                  currentAge,
+                                  options[selectedGender]);
                               print(int.parse(phoneController.text));
                               AddUser addUser = AddUser(
                                   nameController.text,
@@ -657,6 +663,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   selectedMedical,
                                   selectedEmotional,
                                   bmi.calculateBMI(),
+                                  bmr.calculateBMR(),
                                   "",
                                   "");
                               addUser.addUser();

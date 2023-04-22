@@ -48,6 +48,7 @@ class _SignupPageState extends State<SignupPage> {
       "MedicalCondition": "",
       "EmotionalHealth": "",
       "BMI": 0,
+      "BMR": 0,
     });
 
     // Navigator.push(

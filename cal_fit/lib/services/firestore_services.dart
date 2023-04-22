@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 class AddUser {
   String name, gender, plan, medical, emotional, email, password;
   int height, weight, age, phone, targetWeight, bmi;
+  double bmr;
 
   AddUser(
       this.name,
@@ -20,6 +21,7 @@ class AddUser {
       this.medical,
       this.emotional,
       this.bmi,
+      this.bmr,
       this.email,
       this.password);
 
@@ -40,6 +42,7 @@ class AddUser {
           "MedicalCondition": medical,
           "EmotionalHealth": emotional,
           "BMI": bmi,
+          "BMR": bmr,
           "Email": email,
           "Password": password
         })
