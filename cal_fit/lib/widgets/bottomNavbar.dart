@@ -56,27 +56,6 @@ class _bottomNavbarState extends State<bottomNavbar> {
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  // static const List<Widget> _widgetOptions = <Widget>[
-  //   dashboard(),
-  //   fitnessCenter(),
-  //   // Text(
-  //   //   'Index 1: Fitness Center',
-  //   //   style: optionStyle,
-  //   // ),
-  //   Text(
-  //     'Index 2: Calorie',
-  //     style: optionStyle,
-  //   ),
-  //   Text(
-  //     'Index 3: Diet Options',
-  //     style: optionStyle,
-  //   ),
-  //   // Text(
-  //   //   'Index 4: Profile Page',
-  //   //   style: optionStyle,
-  //   // ),
-  //   ProfilePage(),
-  // ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -88,16 +67,6 @@ class _bottomNavbarState extends State<bottomNavbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: Center(
-      //   child: _widgetOptions.elementAt(_selectedIndex),
-      // ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     // Add your onPressed code here!
-      //   },
-      //   backgroundColor: Color(0xff19376D),
-      //   child: const Icon(Icons.chat_bubble),
-      // ),
       body: Navigator(
         onGenerateRoute: (settings) =>
             MaterialPageRoute(builder: (context) => currentScreen),

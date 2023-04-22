@@ -12,7 +12,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
-  runApp(const MyApp());
 }
 
 final Map<String, WidgetBuilder> routes = {
