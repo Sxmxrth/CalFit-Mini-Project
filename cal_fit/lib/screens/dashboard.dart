@@ -88,7 +88,7 @@ class _dashboardState extends State<dashboard> {
               circularStrokeCap: CircularStrokeCap.round,
               startAngle: 180.0,
               radius: 120.0,
-              lineWidth: 8.0,
+              lineWidth: 17.0,
               percent: (_stepCount / 100000),
               progressColor: Color(0xff443C68),
               center: Column(
@@ -105,20 +105,31 @@ class _dashboardState extends State<dashboard> {
                 ],
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 70),
             Container(
               padding: EdgeInsets.symmetric(vertical: 20),
               decoration: BoxDecoration(
-                color: Color(0xffA5D7E8),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  stepCounterCard("Distance", Icons.pin_drop_outlined, "100km"),
-                  stepCounterCard("Speed", Icons.speed_sharp, "3.5km/hr"),
-                  stepCounterCard("Calories",
-                      Icons.local_fire_department_outlined, "300/hr"),
-                ],
+                  // color: Color(0xffA5D7E8),
+                  ),
+              child: IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    stepCounterCard(
+                        "Distance", Icons.pin_drop_outlined, "100km"),
+                    VerticalDivider(
+                      color: Colors.grey[500],
+                      thickness: 1,
+                    ),
+                    stepCounterCard("Speed", Icons.speed_sharp, "3.5km/hr"),
+                    VerticalDivider(
+                      color: Colors.grey[500],
+                      thickness: 1,
+                    ),
+                    stepCounterCard("Calories",
+                        Icons.local_fire_department_outlined, "300/hr"),
+                  ],
+                ),
               ),
             )
           ],

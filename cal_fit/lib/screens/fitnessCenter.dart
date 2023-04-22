@@ -14,40 +14,43 @@ final List<Widget> containers = [
   CardImageRight(
     image: "images/cardio.png",
     content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+        "5 x 1 min Jumping rope, 10 story stair climbing, 5 x 1 min Jumping Jacks",
     type: "Cardio",
   ),
   CardImageLeft(
     image: "images/core.png",
     content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+        "3 x 1 min Side plank, 4 x 15 Partial Leg Raises, Weighted Russian Twists, Cross legged Mountain Climber",
     type: "Core",
   ),
   CardImageRight(
     image: "images/chest.png",
-    content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    content: "4 x 15 Diamond Pushups, 4 x 15 Chest Dips, 3 x 20 Chest Flyes. ",
     type: "Chest",
   ),
   CardImageLeft(
     image: "images/back.png",
-    content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    content: "4 x 10 Pull ups, 4 x 10 Chin ups, 4 x 15 Wide Angled Push Ups",
     type: "Back",
   ),
   CardImageRight(
     image: "images/legs.png",
     content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+        "3 x 20 Close legged Squats, 4 x 25 Lunges per leg, 4 x 50 Calf Raises, 3 x 25sec Standing Leg Hold",
     type: "Legs",
   ),
 ];
+
+bool isExpanded1 = false;
+bool isExpanded2 = false;
+bool isExpanded3 = false;
+bool isExpanded4 = false;
+bool isExpanded5 = false;
 
 class _fitnessCenterState extends State<fitnessCenter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffECF2FF),
       appBar: AppBar(
         toolbarHeight: 80,
         elevation: 0,
@@ -77,12 +80,236 @@ class _fitnessCenterState extends State<fitnessCenter> {
               SizedBox(
                 height: 20,
               ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isExpanded1 = !isExpanded1;
+                  });
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.0),
+                      color: Colors.blue[200],
+                      image: DecorationImage(
+                        image: AssetImage("images/cardio.avif"),
+                        fit: BoxFit.cover,
+                      )),
+                  width: double.infinity,
+                  height: isExpanded1 ? 190 : 120,
+                  child: isExpanded1
+                      ? Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
+                            "Card 1 expanded",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        )
+                      : Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
+                            "Cardio",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isExpanded2 = !isExpanded2;
+                  });
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.0),
+                      color: Colors.blue[200],
+                      image: DecorationImage(
+                        image: AssetImage("images/core.avif"),
+                        fit: BoxFit.cover,
+                      )),
+                  width: double.infinity,
+                  height: isExpanded2 ? 190 : 120,
+                  child: isExpanded2
+                      ? Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
+                            "Card 2 expanded",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      : Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
+                            "Core",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isExpanded3 = !isExpanded3;
+                  });
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.0),
+                      color: Colors.blue[200],
+                      image: DecorationImage(
+                        image: AssetImage("images/chest.avif"),
+                        fit: BoxFit.cover,
+                      )),
+                  width: double.infinity,
+                  height: isExpanded3 ? 190 : 120,
+                  child: isExpanded3
+                      ? Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
+                            "Card 3 expanded",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        )
+                      : Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
+                            "Chest & Shoulder",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isExpanded4 = !isExpanded4;
+                  });
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.0),
+                      color: Colors.blue[200],
+                      image: DecorationImage(
+                        image: AssetImage("images/bicep.avif"),
+                        fit: BoxFit.cover,
+                      )),
+                  width: double.infinity,
+                  height: isExpanded4 ? 190 : 120,
+                  child: isExpanded4
+                      ? Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
+                            "Card 4 expanded",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      : Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
+                            "Back & Biceps",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isExpanded5 = !isExpanded5;
+                  });
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.0),
+                      color: Colors.blue[200],
+                      image: DecorationImage(
+                        image: AssetImage("images/legs.avif"),
+                        fit: BoxFit.cover,
+                      )),
+                  width: double.infinity,
+                  height: isExpanded5 ? 190 : 120,
+                  child: isExpanded5
+                      ? Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
+                            "Card 5 expanded",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        )
+                      : Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
+                            "Legs",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Challenges for you",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontFamily: "SourceSansPro",
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               CarouselSlider(
                 items: containers,
                 options: CarouselOptions(
                   height: 150,
                   enlargeCenterPage: true,
-                  autoPlay: true,
+                  autoPlay: false,
                   aspectRatio: 16 / 9,
                   autoPlayCurve: Curves.fastOutSlowIn,
                   enableInfiniteScroll: true,

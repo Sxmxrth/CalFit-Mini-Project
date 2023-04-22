@@ -66,7 +66,7 @@ class _DietState extends State<Diet> {
                       : Padding(
                           padding: EdgeInsets.all(16.0),
                           child: Text(
-                            "Description",
+                            "Keto",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -108,7 +108,7 @@ class _DietState extends State<Diet> {
                       : Padding(
                           padding: EdgeInsets.all(16.0),
                           child: Text(
-                            "Description",
+                            "Paleo",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -150,7 +150,7 @@ class _DietState extends State<Diet> {
                       : Padding(
                           padding: EdgeInsets.all(16.0),
                           child: Text(
-                            "Description",
+                            "Vegan",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -192,7 +192,7 @@ class _DietState extends State<Diet> {
                       : Padding(
                           padding: EdgeInsets.all(16.0),
                           child: Text(
-                            "Description",
+                            "Dukan",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -234,7 +234,7 @@ class _DietState extends State<Diet> {
                       : Padding(
                           padding: EdgeInsets.all(16.0),
                           child: Text(
-                            "Description",
+                            "Atkin",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,

@@ -111,7 +111,7 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
                 CircularPercentIndicator(
                   startAngle: 180.0,
                   radius: 110.0,
-                  lineWidth: 10.0,
+                  lineWidth: 17.0,
                   percent: caloriesBurnt / maxCalories, // Updated value
                   center: Text(
                     (caloriesBurnt).toStringAsFixed(0),

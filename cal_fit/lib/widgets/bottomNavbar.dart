@@ -103,6 +103,7 @@ class _bottomNavbarState extends State<bottomNavbar> {
             MaterialPageRoute(builder: (context) => currentScreen),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        // type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xff0B2447),
         items: bottomNavBarItems,
         currentIndex: _selectedIndex,
