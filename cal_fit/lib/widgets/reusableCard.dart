@@ -16,7 +16,7 @@ class CardImageRight extends StatelessWidget {
           decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
               borderRadius: BorderRadius.circular(10),
-              color: Color(0xffC0DBEA)),
+              color: Color(0xff0A4D68)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -26,7 +26,11 @@ class CardImageRight extends StatelessWidget {
                 height: 150,
                 child: Text(
                   content,
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               Container(
@@ -58,7 +62,7 @@ class CardImageLeft extends StatelessWidget {
         decoration: BoxDecoration(
             border: Border.all(color: Colors.black),
             borderRadius: BorderRadius.circular(10),
-            color: Color(0xffFDF4F5)),
+            color: Color(0xff088395)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -75,7 +79,7 @@ class CardImageLeft extends StatelessWidget {
               height: 150,
               child: Text(
                 content,
-                style: TextStyle(fontSize: 14),
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               ),
             ),
           ],

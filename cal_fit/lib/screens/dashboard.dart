@@ -115,19 +115,21 @@ class _dashboardState extends State<dashboard> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
+                    stepCounterCard("Distance", Icons.pin_drop_outlined,
+                        "${(0.838 * _stepCount / 1000).round()} km"),
+                    VerticalDivider(
+                      color: Colors.grey[500],
+                      thickness: 1,
+                    ),
+                    stepCounterCard("Speed", Icons.speed_sharp, "3.5 km/hr"),
+                    VerticalDivider(
+                      color: Colors.grey[500],
+                      thickness: 1,
+                    ),
                     stepCounterCard(
-                        "Distance", Icons.pin_drop_outlined, "100km"),
-                    VerticalDivider(
-                      color: Colors.grey[500],
-                      thickness: 1,
-                    ),
-                    stepCounterCard("Speed", Icons.speed_sharp, "3.5km/hr"),
-                    VerticalDivider(
-                      color: Colors.grey[500],
-                      thickness: 1,
-                    ),
-                    stepCounterCard("Calories",
-                        Icons.local_fire_department_outlined, "300/hr"),
+                        "Calories",
+                        Icons.local_fire_department_outlined,
+                        "${(_stepCount * 0.045).round()} kcal"),
                   ],
                 ),
               ),

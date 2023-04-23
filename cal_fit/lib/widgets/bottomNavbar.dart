@@ -6,10 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:cal_fit/screens/profilePage.dart';
 import 'package:cal_fit/screens/dashboard.dart';
 import 'package:cal_fit/screens/fitnessCenter.dart';
-
-// final Map<String, WidgetBuilder> profileRoutes = {
-//   '/profilepage': (BuildContext context) => ProfilePage(),
-// };
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class bottomNavbar extends StatefulWidget {
   const bottomNavbar({super.key});
@@ -21,15 +18,15 @@ class bottomNavbar extends StatefulWidget {
 class _bottomNavbarState extends State<bottomNavbar> {
   final List<BottomNavigationBarItem> bottomNavBarItems = [
     BottomNavigationBarItem(
-        icon: Icon(Icons.dashboard),
+        icon: FaIcon(FontAwesomeIcons.personRunning),
         label: 'Dashboard',
         backgroundColor: Color(0xff0B2447)),
     BottomNavigationBarItem(
-        icon: Icon(Icons.fitness_center),
+        icon: FaIcon(FontAwesomeIcons.dumbbell),
         label: 'Fitness Center',
         backgroundColor: Color(0xff0B2447)),
     BottomNavigationBarItem(
-        icon: Icon(Icons.add),
+        icon: FaIcon(FontAwesomeIcons.fire),
         label: 'Calories',
         backgroundColor: Color(0xff0B2447)),
     BottomNavigationBarItem(

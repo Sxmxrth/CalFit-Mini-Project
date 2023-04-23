@@ -145,10 +145,9 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
                             SizedBox(
                               width: 350.0,
                               child: TextFormField(
-                                // keyboardType: TextInputType.number,
                                 controller: caloriesController,
                                 decoration: InputDecoration(
-                                  hintText: 'Enter your calorie intake',
+                                  hintText: 'Enter the food item',
                                   border: const OutlineInputBorder(),
                                   contentPadding: const EdgeInsets.symmetric(
                                     horizontal: 30.0,
@@ -162,7 +161,7 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
                                         caloriesController.clear();
                                       });
                                     },
-                                    icon: const Icon(Icons.check),
+                                    icon: const Icon(Icons.add),
                                   ),
                                 ),
                               ),
