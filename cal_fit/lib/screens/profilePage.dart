@@ -266,8 +266,16 @@ class _ProfilePageState extends State<ProfilePage> {
                           Container(
                             decoration: BoxDecoration(
                                 color: Color(0xffFDF4F5),
-                                border: Border.all(color: Colors.black),
-                                borderRadius: BorderRadius.circular(10)),
+                                // border: Border.all(color: Colors.black),
+                                borderRadius: BorderRadius.circular(10),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topRight,
+                                  end: Alignment.bottomLeft,
+                                  colors: [
+                                    Colors.blue,
+                                    Colors.red,
+                                  ],
+                                )),
                             padding: EdgeInsets.all(20),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -304,7 +312,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ),
                                 spaceBelow(),
                                 Slider(
-                                  activeColor: Color(0xff576CBC),
+                                  activeColor: Color(0xff444444),
                                   value: currentSlider,
                                   max: 210,
                                   label: currentSlider.toString(),
@@ -326,8 +334,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                   padding: EdgeInsets.symmetric(vertical: 20),
                                   decoration: BoxDecoration(
                                       color: Color(0xffFDF4F5),
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(10)),
+                                      // border: Border.all(color: Colors.black),
+                                      borderRadius: BorderRadius.circular(10),
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topRight,
+                                        end: Alignment.bottomLeft,
+                                        colors: [
+                                          Colors.blue,
+                                          Colors.red,
+                                        ],
+                                      )),
                                   child: Column(
                                     children: [
                                       Text(
@@ -404,8 +420,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                   padding: EdgeInsets.symmetric(vertical: 20),
                                   decoration: BoxDecoration(
                                       color: Color(0xffFDF4F5),
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(10)),
+                                      // border: Border.all(color: Colors.black),
+                                      borderRadius: BorderRadius.circular(10),
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topRight,
+                                        end: Alignment.bottomLeft,
+                                        colors: [
+                                          Colors.blue,
+                                          Colors.red,
+                                        ],
+                                      )),
                                   child: Column(
                                     children: [
                                       Text(
@@ -525,8 +549,16 @@ class _ProfilePageState extends State<ProfilePage> {
                           Container(
                             decoration: BoxDecoration(
                                 color: Color(0xffFDF4F5),
-                                border: Border.all(color: Colors.black),
-                                borderRadius: BorderRadius.circular(10)),
+                                // border: Border.all(color: Colors.black),
+                                borderRadius: BorderRadius.circular(10),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topRight,
+                                  end: Alignment.bottomLeft,
+                                  colors: [
+                                    Colors.blue,
+                                    Colors.red,
+                                  ],
+                                )),
                             padding: EdgeInsets.all(20),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -563,7 +595,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ),
                                 spaceBelow(),
                                 Slider(
-                                  activeColor: Color(0xff576CBC),
+                                  activeColor: Color(0xff444444),
                                   value: targetWeight,
                                   max: 120,
                                   label: currentSlider.toString(),

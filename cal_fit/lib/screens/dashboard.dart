@@ -90,7 +90,15 @@ class _dashboardState extends State<dashboard> {
               radius: 120.0,
               lineWidth: 17.0,
               percent: (_stepCount / 100000),
-              progressColor: Color(0xff443C68),
+              // progressColor: Color(0xff443C68),
+              linearGradient: LinearGradient(
+                colors: [
+                  Color(0xff3E54AC),
+                  Color(0xffBFACE2),
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
               center: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

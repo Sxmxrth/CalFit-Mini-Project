@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_declarations, use_function_type_syntax_for_parameters
+// ignore_for_file: prefer_const_constructors, prefer_const_declarations, use_function_type_syntax_for_parameters, prefer_const_literals_to_create_immutables
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
@@ -117,7 +117,15 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
                     (caloriesBurnt).toStringAsFixed(0),
                     style: TextStyle(fontSize: 20.0),
                   ),
-                  progressColor: Color(0xff980F5A),
+                  // progressColor: Color(0xff980F5A),
+                  linearGradient: LinearGradient(
+                    colors: [
+                      Color(0xff37306B),
+                      Color(0xffD27685),
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
                 ),
                 SizedBox(height: 20),
                 Container(

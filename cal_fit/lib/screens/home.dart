@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:cal_fit/screens/loginPage.dart';
 import 'package:cal_fit/screens/signupPage.dart';
@@ -45,21 +45,34 @@ class HomePage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                elevation: 3,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+            Ink(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.blue,
+                    Colors.red,
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                 ),
-                minimumSize: Size(300, 65),
+                borderRadius: BorderRadius.circular(10),
               ),
-              onPressed: () {
-                Navigator.pushNamed(context, '/signup');
-              },
-              child: Text(
-                "Next",
-                style: TextStyle(color: Colors.black, fontSize: 20),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  minimumSize: Size(300, 65),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/signup');
+                },
+                child: Text(
+                  "Next",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
               ),
             ),
             SizedBox(
