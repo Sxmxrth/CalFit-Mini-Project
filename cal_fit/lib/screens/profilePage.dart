@@ -701,7 +701,10 @@ class _ProfilePageState extends State<ProfilePage> {
                               Navigator.pushNamed(context, "/dashboard");
                               //Update the database with this info
                             },
-                            child: Text("Update"),
+                            child: Text("Update",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                )),
                             style: ElevatedButton.styleFrom(
                                 minimumSize: Size(200, 60),
                                 backgroundColor: Color(0xff0B2447)),

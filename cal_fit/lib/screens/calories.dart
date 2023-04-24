@@ -56,7 +56,7 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
 
   TextEditingController caloriesController = TextEditingController(text: "0");
   double caloriesBurnt = 0;
-  double maxCalories = 5000;
+  double maxCalories = 10000;
 
   void updateCaloriesBurnt(String foodItem) async {
     final String apiKey = 'tfrgbMHWlLMua08CwmmR8Y83UCrhV6ezK83oK5Qo';
@@ -109,6 +109,7 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
             child: Column(
               children: [
                 CircularPercentIndicator(
+                  circularStrokeCap: CircularStrokeCap.round,
                   startAngle: 180.0,
                   radius: 110.0,
                   lineWidth: 17.0,

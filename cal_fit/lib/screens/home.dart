@@ -47,19 +47,19 @@ class HomePage extends StatelessWidget {
             ),
             Ink(
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.blue,
-                    Colors.red,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
+                // gradient: LinearGradient(
+                //   colors: [
+                //     Colors.blue,
+                //     Colors.red,
+                //   ],
+                //   begin: Alignment.topCenter,
+                //   end: Alignment.bottomCenter,
+                // ),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: Colors.white,
                   elevation: 3,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                 },
                 child: Text(
                   "Next",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(color: Colors.black, fontSize: 20),
                 ),
               ),
             ),

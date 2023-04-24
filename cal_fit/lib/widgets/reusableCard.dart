@@ -14,7 +14,7 @@ class CardImageRight extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.only(top: 20, left: 5),
           decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
+              // border: Border.all(color: Colors.black),
               borderRadius: BorderRadius.circular(10),
               color: Color(0xff0A4D68),
               gradient: LinearGradient(
@@ -68,7 +68,7 @@ class CardImageLeft extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.only(top: 20),
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.black),
+            // border: Border.all(color: Colors.black),
             borderRadius: BorderRadius.circular(10),
             color: Color(0xff088395),
             gradient: LinearGradient(
