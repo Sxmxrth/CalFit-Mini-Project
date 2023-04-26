@@ -186,8 +186,8 @@ class _dashboardState extends State<dashboard> {
                                 ),
                                 color: Colors.red,
                                 borderRadius: BorderRadius.circular(15)),
-                            child: Opacity(
-                              opacity: 0.5,
+                            child: Align(
+                              alignment: Alignment.bottomRight,
                               child: Container(
                                 margin: EdgeInsets.all(10),
                                 child: Text(
@@ -222,6 +222,20 @@ class _dashboardState extends State<dashboard> {
                                 ),
                                 color: Colors.black,
                                 borderRadius: BorderRadius.circular(15)),
+                            child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                child: Text(
+                                  "Relax",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         )
                       ],
@@ -249,6 +263,20 @@ class _dashboardState extends State<dashboard> {
                                 ),
                                 color: Colors.red,
                                 borderRadius: BorderRadius.circular(15)),
+                            child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                child: Text(
+                                  "Study",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -271,6 +299,20 @@ class _dashboardState extends State<dashboard> {
                                 ),
                                 color: Colors.black,
                                 borderRadius: BorderRadius.circular(15)),
+                            child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                child: Text(
+                                  "Focus",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         )
                       ],
@@ -298,6 +340,20 @@ class _dashboardState extends State<dashboard> {
                                 ),
                                 color: Colors.red,
                                 borderRadius: BorderRadius.circular(15)),
+                            child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                child: Text(
+                                  "Meditate",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -320,6 +376,20 @@ class _dashboardState extends State<dashboard> {
                                 ),
                                 color: Colors.black,
                                 borderRadius: BorderRadius.circular(15)),
+                            child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                child: Text(
+                                  "Workout",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         )
                       ],
