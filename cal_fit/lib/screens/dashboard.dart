@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:pedometer/pedometer.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class dashboard extends StatefulWidget {
   const dashboard({super.key});
@@ -66,6 +67,7 @@ class _dashboardState extends State<dashboard> {
 
   @override
   Widget build(BuildContext context) {
+    final player = AudioPlayer();
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
@@ -167,30 +169,60 @@ class _dashboardState extends State<dashboard> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          width: 170,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage("images/sleep.avif"),
-                                fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () {
+                            player.play(AssetSource("sleep.mp3"));
+                          },
+                          onDoubleTap: () {
+                            player.stop();
+                          },
+                          child: Container(
+                            width: 170,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("images/sleep.avif"),
+                                  fit: BoxFit.cover,
+                                ),
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(15)),
+                            child: Opacity(
+                              opacity: 0.5,
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                child: Text(
+                                  "Sleep",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 25,
+                                  ),
+                                ),
                               ),
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(15)),
+                            ),
+                          ),
                         ),
                         SizedBox(
                           width: 15,
                         ),
-                        Container(
-                          width: 170,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage("images/chill.avif"),
-                                fit: BoxFit.cover,
-                              ),
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(15)),
+                        GestureDetector(
+                          onTap: () {
+                            player.play(AssetSource("chill.mp3"));
+                          },
+                          onDoubleTap: () {
+                            player.stop();
+                          },
+                          child: Container(
+                            width: 170,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("images/chill.avif"),
+                                  fit: BoxFit.cover,
+                                ),
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(15)),
+                          ),
                         )
                       ],
                     ),
@@ -200,30 +232,46 @@ class _dashboardState extends State<dashboard> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          width: 170,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage("images/books.avif"),
-                                fit: BoxFit.cover,
-                              ),
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(15)),
+                        GestureDetector(
+                          onTap: () {
+                            player.play(AssetSource("study.mp3"));
+                          },
+                          onDoubleTap: () {
+                            player.stop();
+                          },
+                          child: Container(
+                            width: 170,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("images/books.avif"),
+                                  fit: BoxFit.cover,
+                                ),
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(15)),
+                          ),
                         ),
                         SizedBox(
                           width: 15,
                         ),
-                        Container(
-                          width: 170,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage("images/focus.avif"),
-                                fit: BoxFit.cover,
-                              ),
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(15)),
+                        GestureDetector(
+                          onTap: () {
+                            player.play(AssetSource("focus.mp3"));
+                          },
+                          onDoubleTap: () {
+                            player.stop();
+                          },
+                          child: Container(
+                            width: 170,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("images/focus.avif"),
+                                  fit: BoxFit.cover,
+                                ),
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(15)),
+                          ),
                         )
                       ],
                     ),
@@ -233,30 +281,46 @@ class _dashboardState extends State<dashboard> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          width: 170,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage("images/calmness.avif"),
-                                fit: BoxFit.cover,
-                              ),
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(15)),
+                        GestureDetector(
+                          onTap: () {
+                            player.play(AssetSource("calm.mp3"));
+                          },
+                          onDoubleTap: () {
+                            player.stop();
+                          },
+                          child: Container(
+                            width: 170,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("images/calmness.avif"),
+                                  fit: BoxFit.cover,
+                                ),
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(15)),
+                          ),
                         ),
                         SizedBox(
                           width: 15,
                         ),
-                        Container(
-                          width: 170,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage("images/workout.avif"),
-                                fit: BoxFit.cover,
-                              ),
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(15)),
+                        GestureDetector(
+                          onTap: () {
+                            player.play(AssetSource("workout.mp3"));
+                          },
+                          onDoubleTap: () {
+                            player.stop();
+                          },
+                          child: Container(
+                            width: 170,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("images/workout.avif"),
+                                  fit: BoxFit.cover,
+                                ),
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(15)),
+                          ),
                         )
                       ],
                     ),
