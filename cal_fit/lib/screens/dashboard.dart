@@ -99,7 +99,7 @@ class _dashboardState extends State<dashboard> {
                   startAngle: 180.0,
                   radius: 120.0,
                   lineWidth: 17.0,
-                  percent: (_stepCount / 100000),
+                  percent: (_stepCount / 150000),
                   // progressColor: Color(0xff443C68),
                   linearGradient: LinearGradient(
                     colors: [
@@ -119,7 +119,7 @@ class _dashboardState extends State<dashboard> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text("/100000 steps")
+                      Text("/150000 steps")
                     ],
                   ),
                 ),
