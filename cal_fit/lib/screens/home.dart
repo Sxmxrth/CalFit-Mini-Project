@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:cal_fit/screens/loginPage.dart';
 import 'package:cal_fit/screens/signupPage.dart';
-import 'package:cal_fit/widgets/bottomNavbar.dart';
 import 'package:flutter/material.dart';
 
 final Map<String, WidgetBuilder> profileRoutes = {
@@ -71,7 +69,11 @@ class HomePage extends StatelessWidget {
                 },
                 child: Text(
                   "Next",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),

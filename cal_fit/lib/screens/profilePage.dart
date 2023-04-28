@@ -269,11 +269,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                 // border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(10),
                                 gradient: LinearGradient(
-                                  begin: Alignment.topRight,
-                                  end: Alignment.bottomLeft,
+                                  begin: Alignment.bottomCenter,
+                                  end: Alignment.topCenter,
                                   colors: [
-                                    Colors.blue,
-                                    Colors.red,
+                                    Color(0xffBFACE2),
+                                    Color(0xff3E54AC),
                                   ],
                                 )),
                             padding: EdgeInsets.all(20),
@@ -337,11 +337,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                       // border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(10),
                                       gradient: LinearGradient(
-                                        begin: Alignment.topRight,
-                                        end: Alignment.bottomLeft,
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
                                         colors: [
-                                          Colors.blue,
-                                          Colors.red,
+                                          Color(0xffBFACE2),
+                                          Color(0xff3E54AC),
                                         ],
                                       )),
                                   child: Column(
@@ -423,11 +423,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                       // border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(10),
                                       gradient: LinearGradient(
-                                        begin: Alignment.topRight,
-                                        end: Alignment.bottomLeft,
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
                                         colors: [
-                                          Colors.blue,
-                                          Colors.red,
+                                          Color(0xffBFACE2),
+                                          Color(0xff3E54AC),
                                         ],
                                       )),
                                   child: Column(
@@ -552,11 +552,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                 // border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(10),
                                 gradient: LinearGradient(
-                                  begin: Alignment.topRight,
-                                  end: Alignment.bottomLeft,
+                                  begin: Alignment.bottomCenter,
+                                  end: Alignment.topCenter,
                                   colors: [
-                                    Colors.blue,
-                                    Colors.red,
+                                    Color(0xffBFACE2),
+                                    Color(0xff3E54AC),
                                   ],
                                 )),
                             padding: EdgeInsets.all(20),

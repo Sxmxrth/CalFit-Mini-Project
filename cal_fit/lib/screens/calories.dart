@@ -6,6 +6,7 @@ import 'package:charts_flutter_new/flutter.dart' as charts;
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Calorie extends StatefulWidget {
   @override

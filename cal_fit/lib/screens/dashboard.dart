@@ -60,7 +60,10 @@ class _dashboardState extends State<dashboard> {
         SizedBox(
           height: 15,
         ),
-        Text(bottomText)
+        Text(
+          bottomText,
+          style: TextStyle(fontSize: 14),
+        )
       ],
     );
   }
@@ -126,9 +129,18 @@ class _dashboardState extends State<dashboard> {
                 SizedBox(height: 40),
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 20),
+                  margin: EdgeInsets.symmetric(horizontal: 17),
                   decoration: BoxDecoration(
-                      // color: Color(0xffA5D7E8),
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: [
+                          Color(0xffBFACE2),
+                          Color(0xff3E54AC),
+                        ],
                       ),
+                      // color: Color(0xffA5D7E8),
+                      borderRadius: BorderRadius.circular(20)),
                   child: IntrinsicHeight(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -136,13 +148,13 @@ class _dashboardState extends State<dashboard> {
                         stepCounterCard("Distance", Icons.pin_drop_outlined,
                             "${(0.838 * _stepCount / 1000).round()} km"),
                         VerticalDivider(
-                          color: Colors.grey[500],
+                          color: Colors.grey[400],
                           thickness: 1,
                         ),
                         stepCounterCard(
                             "Speed", Icons.speed_sharp, "3.5 km/hr"),
                         VerticalDivider(
-                          color: Colors.grey[500],
+                          color: Colors.grey[400],
                           thickness: 1,
                         ),
                         stepCounterCard(
@@ -157,7 +169,7 @@ class _dashboardState extends State<dashboard> {
                   height: 30,
                 ),
                 Text(
-                  "For your head",
+                  "For your mind",
                   style: TextStyle(fontSize: 30, fontFamily: "SourceSansPro"),
                 ),
                 SizedBox(
