@@ -68,30 +68,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  // final String _uid = '';
-  // String name = "";
-  // late final TextEditingController nameController, phoneController;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   getUserData();
-  // }
-
-  // Future<void> getUserData() async {
-  //   DocumentSnapshot doc = await FirebaseFirestore.instance
-  //       .collection('users')
-  //       .doc(widget.uid)
-  //       .get();
-  //   final Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-  //   setState(() {
-  //     name = data['Name'] as String;
-  //     print(name);
-  //     nameController = TextEditingController(text: name);
-  //     phoneController = TextEditingController(text: data["Phone"] as String);
-  //   });
-  // }
-
   double currentSlider = 120.0;
   double targetWeight = 40;
   int currentWeight = 40;
@@ -105,6 +81,18 @@ class _ProfilePageState extends State<ProfilePage> {
       backgroundColor: Color(0xffECF2FF),
       appBar: AppBar(
         elevation: 0,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Color(0xff19376D),
+                Color(0xff576CBC),
+              ],
+            ),
+          ),
+        ),
         leading: Padding(
           padding: const EdgeInsets.fromLTRB(4, 10, 0, 0),
           child: IconButton(
@@ -146,7 +134,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
         backgroundColor: Color(0xff0B2447),
-        toolbarHeight: 100,
+        toolbarHeight: 80,
         title: const Padding(
           padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
           child: Text('Your Profile', style: TextStyle(fontSize: 25)),

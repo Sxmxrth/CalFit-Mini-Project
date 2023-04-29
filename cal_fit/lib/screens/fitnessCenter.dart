@@ -52,10 +52,22 @@ class _fitnessCenterState extends State<fitnessCenter> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Color(0xff19376D),
+                Color(0xff576CBC),
+              ],
+            ),
+          ),
+        ),
         toolbarHeight: 80,
         elevation: 0,
         automaticallyImplyLeading: false,
-        backgroundColor: Color(0xff19376D),
+        // backgroundColor: Color(0xff19376D),
         title: Text(
           "Hello Samarth!",
           style: TextStyle(

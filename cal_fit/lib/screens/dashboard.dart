@@ -73,10 +73,23 @@ class _dashboardState extends State<dashboard> {
     final player = AudioPlayer();
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Color(0xff19376D),
+                Color(0xff576CBC),
+              ],
+            ),
+          ),
+        ),
         toolbarHeight: 80,
         elevation: 0,
-        backgroundColor: Color(0xff19376D),
+        // backgroundColor: Color(0xff19376D),
         // centerTitle: true,
+        automaticallyImplyLeading: false,
         title: const Text(
           'Dashboard',
           style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),

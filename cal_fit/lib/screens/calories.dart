@@ -93,6 +93,19 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
     return Scaffold(
       backgroundColor: Color(0xffECF2FF),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Color(0xff19376D),
+                Color(0xff576CBC),
+              ],
+            ),
+          ),
+        ),
         toolbarHeight: 80,
         elevation: 0,
         backgroundColor: Color(0xff19376D),

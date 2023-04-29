@@ -20,6 +20,18 @@ class _DietState extends State<Diet> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Color(0xff19376D),
+                Color(0xff576CBC),
+              ],
+            ),
+          ),
+        ),
         toolbarHeight: 80,
         automaticallyImplyLeading: false,
         backgroundColor: Color(0xff19376D),
