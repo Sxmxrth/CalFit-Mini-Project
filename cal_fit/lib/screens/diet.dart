@@ -63,16 +63,46 @@ class _DietState extends State<Diet> {
                         fit: BoxFit.cover,
                       )),
                   width: double.infinity,
-                  height: isExpanded1 ? 190 : 120,
+                  height: isExpanded1 ? 250 : 120,
                   child: isExpanded1
                       ? Padding(
                           padding: EdgeInsets.all(16.0),
-                          child: Text(
-                            "Card 1 expanded",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                          child: Row(
+                            children: [
+                              Opacity(
+                                opacity: 0.8,
+                                child: Container(
+                                  padding: EdgeInsets.all(20),
+                                  height: double.infinity,
+                                  width: 170,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "1) 15 x Burpees",
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text("2) 4 x 1min Jumping Jacks",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("3) 15 x Squats",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("4) 4 x 1min Skipping",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("5) 4 x 20 Mountain Climber",
+                                          style: TextStyle(fontSize: 16)),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         )
                       : Padding(
@@ -105,16 +135,46 @@ class _DietState extends State<Diet> {
                         fit: BoxFit.cover,
                       )),
                   width: double.infinity,
-                  height: isExpanded2 ? 190 : 120,
+                  height: isExpanded2 ? 250 : 120,
                   child: isExpanded2
                       ? Padding(
                           padding: EdgeInsets.all(16.0),
-                          child: Text(
-                            "Card 2 expanded",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                          child: Row(
+                            children: [
+                              Opacity(
+                                opacity: 0.8,
+                                child: Container(
+                                  padding: EdgeInsets.all(20),
+                                  height: double.infinity,
+                                  width: 170,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "1) 15 x Burpees",
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text("2) 4 x 1min Jumping Jacks",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("3) 15 x Squats",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("4) 4 x 1min Skipping",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("5) 4 x 20 Mountain Climber",
+                                          style: TextStyle(fontSize: 16)),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         )
                       : Padding(
@@ -147,22 +207,52 @@ class _DietState extends State<Diet> {
                         fit: BoxFit.cover,
                       )),
                   width: double.infinity,
-                  height: isExpanded3 ? 190 : 120,
+                  height: isExpanded3 ? 250 : 120,
                   child: isExpanded3
                       ? Padding(
                           padding: EdgeInsets.all(16.0),
-                          child: Text(
-                            "Card 3 expanded",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                          child: Row(
+                            children: [
+                              Opacity(
+                                opacity: 0.8,
+                                child: Container(
+                                  padding: EdgeInsets.all(20),
+                                  height: double.infinity,
+                                  width: 170,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "1) 15 x Burpees",
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text("2) 4 x 1min Jumping Jacks",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("3) 15 x Squats",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("4) 4 x 1min Skipping",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("5) 4 x 20 Mountain Climber",
+                                          style: TextStyle(fontSize: 16)),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         )
                       : Padding(
                           padding: EdgeInsets.all(16.0),
                           child: Text(
-                            "Vegan",
+                            "Dukan",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -189,16 +279,46 @@ class _DietState extends State<Diet> {
                         fit: BoxFit.cover,
                       )),
                   width: double.infinity,
-                  height: isExpanded4 ? 190 : 120,
+                  height: isExpanded4 ? 250 : 120,
                   child: isExpanded4
                       ? Padding(
                           padding: EdgeInsets.all(16.0),
-                          child: Text(
-                            "Card 4 expanded",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                          child: Row(
+                            children: [
+                              Opacity(
+                                opacity: 0.8,
+                                child: Container(
+                                  padding: EdgeInsets.all(20),
+                                  height: double.infinity,
+                                  width: 170,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "1) 15 x Burpees",
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text("2) 4 x 1min Jumping Jacks",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("3) 15 x Squats",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("4) 4 x 1min Skipping",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("5) 4 x 20 Mountain Climber",
+                                          style: TextStyle(fontSize: 16)),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         )
                       : Padding(
@@ -231,16 +351,46 @@ class _DietState extends State<Diet> {
                         fit: BoxFit.cover,
                       )),
                   width: double.infinity,
-                  height: isExpanded5 ? 190 : 120,
+                  height: isExpanded5 ? 250 : 120,
                   child: isExpanded5
                       ? Padding(
                           padding: EdgeInsets.all(16.0),
-                          child: Text(
-                            "Card 5 expanded",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                          child: Row(
+                            children: [
+                              Opacity(
+                                opacity: 0.8,
+                                child: Container(
+                                  padding: EdgeInsets.all(20),
+                                  height: double.infinity,
+                                  width: 170,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "1) 15 x Burpees",
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text("2) 4 x 1min Jumping Jacks",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("3) 15 x Squats",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("4) 4 x 1min Skipping",
+                                          style: TextStyle(fontSize: 16)),
+                                      SizedBox(height: 6),
+                                      Text("5) 4 x 20 Mountain Climber",
+                                          style: TextStyle(fontSize: 16)),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         )
                       : Padding(

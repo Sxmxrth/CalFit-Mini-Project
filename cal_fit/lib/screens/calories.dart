@@ -109,11 +109,11 @@ class _CalorieCounterPageState extends State<CalorieCounterPage>
         toolbarHeight: 80,
         elevation: 0,
         backgroundColor: Color(0xff19376D),
-        centerTitle: true,
         title: const Text(
-          'Calorie Counter',
+          "Calorie Counter",
           style: TextStyle(
-            fontSize: 25,
+            fontFamily: "SourceSansPro",
+            fontSize: 35,
           ),
         ),
       ),
