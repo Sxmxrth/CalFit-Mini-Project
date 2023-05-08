@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors, unused_field, library_private_types_in_public_api, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, use_build_context_synchronously
+// ignore_for_file: prefer_const_constructors, unused_field, library_private_types_in_public_api, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, use_build_context_synchronously, sort_child_properties_last
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:cal_fit/widgets/bottomNavbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cal_fit/screens/loginPage.dart';
@@ -70,14 +71,20 @@ class _SignupPageState extends State<SignupPage> {
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Center(
-          child: Text(
-            'Signup',
-            style: TextStyle(
-              fontFamily: "SourceSansPro",
-              fontSize: 30,
-            ),
+            child: DefaultTextStyle(
+          child: AnimatedTextKit(totalRepeatCount: 5, animatedTexts: [
+            TypewriterAnimatedText(
+              "Sign Up",
+              cursor: "|",
+              curve: Curves.bounceIn,
+              speed: Duration(milliseconds: 150),
+            )
+          ]),
+          style: TextStyle(
+            fontFamily: "SourceSansPro",
+            fontSize: 30,
           ),
-        ),
+        )),
         backgroundColor: Color(0xff0B2447),
       ),
       body: Form(

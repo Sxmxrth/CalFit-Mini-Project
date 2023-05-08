@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors, unused_field, library_private_types_in_public_api, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, unused_field, library_private_types_in_public_api, use_key_in_widget_constructors, sort_child_properties_last
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:cal_fit/widgets/bottomNavbar.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -28,8 +29,15 @@ class _SignInPageState extends State<SignInPage> {
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Center(
-            child: Text(
-          'Sign In',
+            child: DefaultTextStyle(
+          child: AnimatedTextKit(totalRepeatCount: 5, animatedTexts: [
+            TypewriterAnimatedText(
+              "Sign In",
+              cursor: "|",
+              curve: Curves.bounceIn,
+              speed: Duration(milliseconds: 150),
+            )
+          ]),
           style: TextStyle(
             fontFamily: "SourceSansPro",
             fontSize: 30,

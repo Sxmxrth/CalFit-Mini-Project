@@ -137,7 +137,8 @@ class _ProfilePageState extends State<ProfilePage> {
         toolbarHeight: 80,
         title: const Padding(
           padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-          child: Text('Your Profile', style: TextStyle(fontSize: 25)),
+          child: Text('Your Profile',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
