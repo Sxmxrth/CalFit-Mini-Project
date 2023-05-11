@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, unnecessary_const
+// ignore_for_file: camel_case_types, prefer_const_constructors, unnecessary_const, unused_field
 
 import 'package:cal_fit/screens/calories.dart';
 import 'package:cal_fit/screens/diet.dart';

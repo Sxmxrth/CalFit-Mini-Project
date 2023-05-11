@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, use_key_in_widget_constructors, body_might_complete_normally_nullable
 
 import 'package:cal_fit/bmiCalculator.dart';
 import 'package:cal_fit/bmrCalculator.dart';

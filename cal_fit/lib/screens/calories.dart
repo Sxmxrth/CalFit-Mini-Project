@@ -1,12 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_declarations, use_function_type_syntax_for_parameters, prefer_const_literals_to_create_immutables
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
 import 'package:charts_flutter_new/flutter.dart' as charts;
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Calorie extends StatefulWidget {
   @override
