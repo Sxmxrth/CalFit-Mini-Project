@@ -69,7 +69,7 @@ class _fitnessCenterState extends State<fitnessCenter> {
         automaticallyImplyLeading: false,
         // backgroundColor: Color(0xff19376D),
         title: Text(
-          "Hello Samarth!",
+          "Fitness Centre",
           style: TextStyle(
             fontFamily: "SourceSansPro",
             fontSize: 35,
